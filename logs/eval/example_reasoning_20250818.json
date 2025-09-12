@@ -1,0 +1,14 @@
+{
+  "suite": "reasoning_core",
+  "date": "2025-08-18",
+  "pass_at_1": 0.82,
+  "pass_at_k": 0.89,
+  "halluc_rate": 0.018,
+  "avg_latency_ms": 780,
+  "n": 320,
+  "breakdown": {
+    "arithmetic": 0.90,
+    "logic_puzzles": 0.78,
+    "code_basics": 0.81
+  }
+}

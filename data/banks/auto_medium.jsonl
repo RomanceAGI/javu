@@ -1,0 +1,49 @@
+{"task":"Bug: 'script crash saat list kosong'—beri 2 hipotesis + 1 langkah reproduksi minimal.","category":"reasoning","difficulty":"medium"}
+{"task":"Fungsi Python deduplikasi list (pertahankan urutan), O(n).","category":"code","difficulty":"medium"}
+{"task":"Ringkas artikel 5 paragraf jadi 5 bullet + 1 rekomendasi aksi.","category":"summarization","difficulty":"medium"}
+{"task":"Rancang README proyek mini (tujuan, penggunaan, konfigurasi, lisensi).","category":"documentation","difficulty":"medium"}
+{"task":"Jelaskan sync vs async + snippet singkat.","category":"code","difficulty":"medium"}
+{"task":".env → secret manager: rencana 5 langkah aman.","category":"security","difficulty":"medium"}
+{"task":"Template prompt 'rapid research' (5 bullet + 2 referensi).","category":"prompting","difficulty":"medium"}
+{"task":"Script validator JSONL (1 objek per baris).","category":"code","difficulty":"medium"}
+{"task":"Bandingkan caching: in-memory vs disk vs Redis + kapan dipakai.","category":"systems","difficulty":"medium"}
+{"task":"Skema log standar: time, level, event, meta (contoh 3 baris).","category":"ops","difficulty":"medium"}
+{"task":"Kapan pakai RAG vs fine-tune ringan? 3 kriteria.","category":"research","difficulty":"medium"}
+{"task":"Checklist rilis mingguan (eval, regression, cost, latency).","category":"mlops","difficulty":"medium"}
+{"task":"Policy sandbox eksekusi: timeout, resource cap, I/O rules.","category":"safety","difficulty":"medium"}
+{"task":"3 test case untuk parser CSV toleran error.","category":"testing","difficulty":"medium"}
+{"task":"Skema direktori proyek AI yang rapi.","category":"project","difficulty":"medium"}
+{"task":"Strategi fallback multi-LLM (routing, retry, circuit breaker).","category":"systems","difficulty":"medium"}
+{"task":"SOP incident kecil: deteksi, mitigasi, RCA singkat, follow-up.","category":"ops","difficulty":"medium"}
+{"task":"Snippet Python: pembatasan biaya harian (estimasi token).","category":"cost","difficulty":"medium"}
+{"task":"Rancang eksperimen A/B prompt baru.","category":"experiment","difficulty":"medium"}
+{"task":"6 aturan prompt hygiene untuk kurangi halusinasi.","category":"prompting","difficulty":"medium"}
+{"task":"Buat util Python hitung token kasar dari string (approx).","category":"code","difficulty":"medium"}
+{"task":"Rancang format evaluasi jawaban: {claim, evidence, confidence}.","category":"evaluation","difficulty":"medium"}
+{"task":"Buat pipeline ekstraksi URL dari teks dan validasi HEAD 200.","category":"systems","difficulty":"medium"}
+{"task":"Jelaskan konsistensi read-after-write di object storage.","category":"systems","difficulty":"medium"}
+{"task":"Buat 5 rule rate-limit API publik sederhana.","category":"security","difficulty":"medium"}
+{"task":"Bandingkan SQLite vs Postgres untuk prototipe AI kecil.","category":"db","difficulty":"medium"}
+{"task":"Tulis fungsi retry dengan exponential backoff (decorator).","category":"code","difficulty":"medium"}
+{"task":"Rancang format event untuk audit tool execution.","category":"ops","difficulty":"medium"}
+{"task":"Buat 10 checklist keamanan data (PII scrubbing) saat logging.","category":"governance","difficulty":"medium"}
+{"task":"Susun pedoman penamaan file & modul Python skala kecil.","category":"project","difficulty":"medium"}
+{"task":"Buat 5 contoh query Prometheus untuk metrik dasar AGI.","category":"ops","difficulty":"medium"}
+{"task":"Jelaskan memory vs cache vs store di arsitektur lo.","category":"reasoning","difficulty":"medium"}
+{"task":"Tulis fungsi Python untuk normalisasi unicode + strip kontrol.","category":"code","difficulty":"medium"}
+{"task":"Rancang loader dokumen untuk RAG (PDF/HTML/TXT) + batas ukuran.","category":"data","difficulty":"medium"}
+{"task":"Buat flow 'clarify-then-answer' dengan threshold uncertainty.","category":"reasoning","difficulty":"medium"}
+{"task":"Definisikan skema config .env & prioritas override (ENV>CLI>file).","category":"ops","difficulty":"medium"}
+{"task":"Tulis test unit untuk MemoryManager.consolidate().","category":"testing","difficulty":"medium"}
+{"task":"Jelaskan trade-off chunk size pada RAG (recall vs cost).","category":"research","difficulty":"medium"}
+{"task":"Buat template laporan mingguan metrik AGI (grafik & insight).","category":"documentation","difficulty":"medium"}
+{"task":"Rancang modul cache hasil tool dengan TTL & hash input.","category":"systems","difficulty":"medium"}
+{"task":"Susun 8 kategori task bank untuk kurikulum awal.","category":"learning","difficulty":"medium"}
+{"task":"Buat util konversi messages → format Claude (system, user, assistant).","category":"code","difficulty":"medium"}
+{"task":"Rancang flow graceful shutdown pakai file `.stop`.","category":"ops","difficulty":"medium"}
+{"task":"Buat fungsi scoring sederhana reward ∈ [−1,1] dari outcome.","category":"learning","difficulty":"medium"}
+{"task":"Definisikan 'intervention rate' & cara mengukurnya.","category":"evaluation","difficulty":"medium"}
+{"task":"Tulis parser log jadi CSV (time, level, event, meta).","category":"code","difficulty":"medium"}
+{"task":"Rancang whitelist tool yang diizinkan + alasan.","category":"safety","difficulty":"medium"}
+{"task":"Buat 5 eksperimen kecil untuk menguji transfer lintas domain.","category":"evaluation","difficulty":"medium"}
+{"task":"Jelaskan kapan perlu 'self-heal' vs 'fail fast' di loop.","category":"ops","difficulty":"medium"}

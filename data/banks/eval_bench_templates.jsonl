@@ -1,0 +1,20 @@
+{"task":"Template laporan Transfer-N (N=100/300/500): metrik, grafik, analisis singkat.","category":"evaluation","difficulty":"medium"}
+{"task":"Format benchmark publik kecil (50 task) + lisensi & petunjuk run.","category":"evaluation","difficulty":"medium"}
+{"task":"Rubrik skor planning (coverage, feasibility, risk) 0–1 + contoh.","category":"evaluation","difficulty":"medium"}
+{"task":"Template eksperimen ablation (komponen, metrik, prosedur).","category":"evaluation","difficulty":"medium"}
+{"task":"Format CSV hasil arena (task_id, status, latency, cost).","category":"evaluation","difficulty":"easy"}
+{"task":"Definisi 'intervention rate' dan cara hitung per 100 tugas.","category":"evaluation","difficulty":"easy"}
+{"task":"Rubrik adversarial pass/fail + severity skor 1–5.","category":"evaluation","difficulty":"medium"}
+{"task":"Template laporan soak 24–96 jam (grafik & insiden).","category":"evaluation","difficulty":"medium"}
+{"task":"Format ringkasan mingguan publik (angka & studi kasus).","category":"evaluation","difficulty":"easy"}
+{"task":"Checklist validasi reproducibility (seed, set versi, env info).","category":"evaluation","difficulty":"medium"}
+{"task":"Rubrik kualitas kode (readability, testability, safety) 1–5.","category":"evaluation","difficulty":"medium"}
+{"task":"Template bug report terstruktur (steps, expected, actual, logs).","category":"evaluation","difficulty":"easy"}
+{"task":"Format audit log tool (mulai, selesai, durasi, hasil, risiko).","category":"evaluation","difficulty":"medium"}
+{"task":"Rubrik RAG citation correctness (match sumber, relevansi).","category":"evaluation","difficulty":"medium"}
+{"task":"Template ringkasan biaya (harian/mingguan) & efisiensi.","category":"evaluation","difficulty":"easy"}
+{"task":"Checklist pre-release gate (eval≥X, soak≥Y jam, error≤Z%).","category":"evaluation","difficulty":"medium"}
+{"task":"Format dataset sanity 20 task 'gold' + kunci jawab.","category":"evaluation","difficulty":"medium"}
+{"task":"Rubrik UX voice (kejelasan, timing, naturalness) 1–5.","category":"evaluation","difficulty":"medium"}
+{"task":"Template RCA insiden (akar masalah, perbaikan, pencegahan).","category":"evaluation","difficulty":"medium"}
+{"task":"Format scoreboard internal per-domain mingguan.","category":"evaluation","difficulty":"easy"}

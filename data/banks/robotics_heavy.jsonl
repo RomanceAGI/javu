@@ -1,0 +1,25 @@
+{"task":"Jelaskan kinematika maju vs balik secara konsep.","category":"robotics","difficulty":"medium"}
+{"task":"Rancang simulator tugas pick-and-place sederhana (pseudocode).","category":"robotics","difficulty":"hard"}
+{"task":"Buat state machine robot untuk 5 state (idle→plan→move→grasp→place).","category":"robotics","difficulty":"medium"}
+{"task":"Susun reward fungsi dasar untuk navigasi menuju target dengan penalti tabrakan.","category":"robotics","difficulty":"hard"}
+{"task":"Rancang pipeline visi untuk deteksi objek sederhana + bounding box.","category":"robotics","difficulty":"hard"}
+{"task":"Jelaskan sensor IMU & enkoder pada robot mobile.","category":"robotics","difficulty":"easy"}
+{"task":"Buat protokol kalibrasi sederhana kamera + lengan robot (konsep).","category":"robotics","difficulty":"hard"}
+{"task":"Rancang buffer perintah & safety stop pada loss komunikasi.","category":"robotics","difficulty":"hard"}
+{"task":"Susun format log robot (ts, pose, cmd, err).","category":"robotics","difficulty":"medium"}
+{"task":"Jelaskan MPC vs PID secara ringkas & kapan dipakai.","category":"robotics","difficulty":"medium"}
+{"task":"Buat daftar risiko fisik & mitigasi untuk demo publik robot.","category":"robotics","difficulty":"hard"}
+{"task":"Rancang evaluator keberhasilan tugas: jarak ke target, kontak, stabilitas.","category":"robotics","difficulty":"hard"}
+{"task":"Susun kebijakan batas kecepatan & area aman.","category":"robotics","difficulty":"hard"}
+{"task":"Buat pipeline sim2real sederhana (domain randomization).","category":"robotics","difficulty":"hard"}
+{"task":"Jelaskan inverse dynamics secara intuitif.","category":"robotics","difficulty":"medium"}
+{"task":"Rancang kontroler hybrid (high-level LLM → low-level policy).","category":"robotics","difficulty":"hard"}
+{"task":"Susun testbed untuk grasping 5 objek berbeda (material/ukuran).","category":"robotics","difficulty":"hard"}
+{"task":"Buat standar telemetry minimal untuk operasi jarak jauh.","category":"robotics","difficulty":"medium"}
+{"task":"Jelaskan path planning A* vs RRT singkat.","category":"robotics","difficulty":"medium"}
+{"task":"Rancang SOP keadaan darurat (e-stop, power cut, komunikasikan).","category":"robotics","difficulty":"hard"}
+{"task":"Susun dataset mini pose estimation untuk evaluasi internal.","category":"robotics","difficulty":"hard"}
+{"task":"Buat protokol latency budget end-to-end (plan→act).","category":"robotics","difficulty":"hard"}
+{"task":"Rancang uji generalisasi peralatan baru tanpa re-train low-level.","category":"robotics","difficulty":"hard"}
+{"task":"Jelaskan konsep grasp stability & metrik sederhana.","category":"robotics","difficulty":"medium"}
+{"task":"Buat guard agar LLM tidak mengeluarkan perintah fisik berbahaya.","category":"robotics","difficulty":"hard"}

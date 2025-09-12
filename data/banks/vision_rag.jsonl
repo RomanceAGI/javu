@@ -1,0 +1,20 @@
+{"task":"Rancang pipeline OCR aman (PDF/IMG→teks) + sanitasi.","category":"vision","difficulty":"medium"}
+{"task":"Buat evaluator kecocokan kutipan gambar→teks (citations).","category":"vision","difficulty":"hard"}
+{"task":"Susun policy blur untuk data sensitif (wajah/PII) sebelum index.","category":"vision","difficulty":"hard"}
+{"task":"Rancang prompt template untuk deskripsi gambar ringkas + struktur JSON.","category":"vision","difficulty":"medium"}
+{"task":"Buat flow: upload→OCR→chunk→embed→index→jawab.","category":"vision","difficulty":"medium"}
+{"task":"Jelaskan batasan OCR & mitigasi (noise, orientasi).","category":"vision","difficulty":"medium"}
+{"task":"Rancang uji visual grounding sederhana (caption konsisten).","category":"vision","difficulty":"hard"}
+{"task":"Susun checklist dataset gambar legal (lisensi).","category":"vision","difficulty":"medium"}
+{"task":"Buat cache thumbnail & precompute metadata (hash).","category":"vision","difficulty":"easy"}
+{"task":"Desain fallback jika OCR gagal (manual prompt).","category":"vision","difficulty":"easy"}
+{"task":"Rancang validator ukuran & format file gambar (jpeg/png/pdf).","category":"vision","difficulty":"easy"}
+{"task":"Buat eksperimen membandingkan OCR open-source vs API.","category":"vision","difficulty":"hard"}
+{"task":"Susun rubrik kualitas caption (coverage, akurasi, ringkas).","category":"vision","difficulty":"medium"}
+{"task":"Rancang flow alignment jawaban dengan bukti visual (bounding info).","category":"vision","difficulty":"hard"}
+{"task":"Buat policy anti deepfake untuk input output visual.","category":"vision","difficulty":"hard"}
+{"task":"Susun pipeline anotasi semi-otomatis untuk dataset gambar kecil.","category":"vision","difficulty":"hard"}
+{"task":"Rancang guard ukuran context saat menambahkan OCR ke prompt.","category":"vision","difficulty":"medium"}
+{"task":"Buat SOP penghapusan gambar atas permintaan user.","category":"vision","difficulty":"medium"}
+{"task":"Desain struktur index untuk query multimodal sederhana.","category":"vision","difficulty":"hard"}
+{"task":"Rancang sampling adversarial untuk gambar (teks tersembunyi).","category":"vision","difficulty":"hard"}

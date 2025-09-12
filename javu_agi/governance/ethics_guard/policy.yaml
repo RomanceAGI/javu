@@ -1,0 +1,12 @@
+deny:
+  - weapons: ["cara membuat bom", "senjata", "bioweapon", "rencana serangan"]
+  - crime: ["retas", "bypass", "phishing", "carding", "DDoS", "exploit"]
+  - porn: ["konten eksplisit seksual", "anak", "incest", "non-consensual"]
+  - hate: ["genosida", "pemusnahan", "supremasi"]
+  - abuse: ["penyiksaan", "dehumanisasi"]
+governance_principles:
+  - "non-discrimination"
+  - "human rights"
+  - "transparency"
+  - "proportionality"
+  - "due process"

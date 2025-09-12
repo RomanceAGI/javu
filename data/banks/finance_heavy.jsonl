@@ -1,0 +1,25 @@
+{"task":"Jelaskan DCF sederhana dan kapan cocok dipakai.","category":"finance","difficulty":"medium"}
+{"task":"Bangun model arus kas 12 bulan untuk SaaS kecil (MRR, churn, CAC payback).","category":"finance","difficulty":"hard"}
+{"task":"Hitung runway: kas $120k, burn $10k/bln, 10% kenaikan biaya tiap 6 bulan.","category":"finance","difficulty":"medium"}
+{"task":"Rancang dashboard unit economics (ARPU, LTV, CAC, GM).","category":"finance","difficulty":"hard"}
+{"task":"Susun sensitivitas biaya LLM (req/hari, token/req, $/1k tok).","category":"finance","difficulty":"medium"}
+{"task":"Buat rencana pricing beta ($5/$10) + proyeksi margin.","category":"finance","difficulty":"medium"}
+{"task":"Skema pencatatan biaya cloud vs capex hardware (pro/kontra).","category":"finance","difficulty":"medium"}
+{"task":"Evaluasi break-even server on-prem vs cloud burst GPU.","category":"finance","difficulty":"hard"}
+{"task":"Buat contoh invoice & kebijakan pembayaran beta publik.","category":"finance","difficulty":"easy"}
+{"task":"Rancang policy refund & fraud prevention sederhana.","category":"finance","difficulty":"medium"}
+{"task":"Proyeksi pendapatan 6 bulan dengan 3 skenario (pesimis/base/optimis).","category":"finance","difficulty":"medium"}
+{"task":"Hitung kontribusi margin per user dengan cost-to-serve.","category":"finance","difficulty":"hard"}
+{"task":"Susun COA ringkas untuk startup AI (akun-akun utama).","category":"finance","difficulty":"medium"}
+{"task":"Jelaskan CAGR dan contoh perhitungan sederhana.","category":"finance","difficulty":"easy"}
+{"task":"Rancang template laporan ke investor bulanan (M/M growth, burn, runway).","category":"finance","difficulty":"medium"}
+{"task":"Analisis risiko kurs USD untuk biaya API & mitigasi.","category":"finance","difficulty":"medium"}
+{"task":"Hitung dampak diskon 20% ke margin & payback.","category":"finance","difficulty":"medium"}
+{"task":"Buat model simple cohort retensi & pendapatan.","category":"finance","difficulty":"hard"}
+{"task":"Definisikan metrik growth efisien: Rule of 40 (adaptasi untuk SaaS kecil).","category":"finance","difficulty":"medium"}
+{"task":"Rancang policy pajak & faktur untuk pelanggan internasional (tingkat konsep).","category":"finance","difficulty":"hard"}
+{"task":"Evaluasi opsi pembiayaan: grant, kredit cloud, revenue share.","category":"finance","difficulty":"medium"}
+{"task":"Susun guard biaya harian & mingguan (limit & notifikasi).","category":"finance","difficulty":"easy"}
+{"task":"Buat tabel pricing feature matrix (free, starter, pro).","category":"finance","difficulty":"easy"}
+{"task":"Rancang kalkulator biaya internal untuk routing multi-LLM.","category":"finance","difficulty":"hard"}
+{"task":"Hitung target GM% agar unit economics sehat di 12 bulan.","category":"finance","difficulty":"hard"}

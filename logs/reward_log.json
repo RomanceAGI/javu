@@ -1,0 +1,12 @@
+[
+  {
+    "step_id": "bootstrap-0",
+    "value": 0.50,
+    "source": "init",
+    "user": "alpha",
+    "task_id": "T-0001",
+    "intrinsic": {"curiosity": 0.2, "competence": 0.3},
+    "uncertainty": 0.18,
+    "credit_path": ["INPUT","THOUGHT","SIM","VERIFY","OUTPUT"]
+  }
+]

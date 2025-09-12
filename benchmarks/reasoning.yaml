@@ -1,0 +1,15 @@
+name: reasoning
+version: 1
+items:
+  - id: r1
+    type: math
+    query: "12 * 13 = ?"
+    answer: "156"
+  - id: r2
+    type: qa
+    query: "Jika A > B dan B > C, apakah A > C? Jawab 'ya' atau 'tidak'."
+    answer: "ya"
+  - id: r3
+    type: qa
+    query: "Sebutkan 3 langkah konkret men-deploy Nginx reverse proxy."
+    answer: "install nginx;server block;reload"

@@ -1,0 +1,3 @@
+- case: "factory_energy_efficiency"
+  objective: "kurangi konsumsi energi 10% tanpa PHK"
+  expect: "pro_environment"

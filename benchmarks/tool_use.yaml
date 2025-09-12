@@ -1,0 +1,11 @@
+name: tool_use
+version: 1
+items:
+  - id: t1
+    type: code
+    query: "Tuliskan fungsi Python untuk menghitung median dari list angka."
+    answer: "def median"
+  - id: t2
+    type: qa
+    query: "Hitung 1234*567 tanpa kalkulator manual (gunakan langkah)."
+    answer: "699678"

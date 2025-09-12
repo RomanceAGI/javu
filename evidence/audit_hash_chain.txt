@@ -1,0 +1,45 @@
+{
+  "ts": 1757432331,
+  "original": {
+    "path": "/mnt/data/executive_controller.py",
+    "sha256": "4f23d6191ce35eaabfe6ed9ce0041b08e594d6e0d9595351e1bd3dff71881452"
+  },
+  "patched": {
+    "path": "/mnt/data/executive_controller.patched.py",
+    "sha256": "2b400aa6a19975c9697dd12ff3fc24ca9e98b4f5a852935453f015138d72e042"
+  },
+  "diff": {
+    "path": "/mnt/data/executive_controller.patch",
+    "sha256": "ed85aedbae24a6ce1e5aefb321651c1ce7c6c6c51c11003bf40bc4b981f788f7"
+  },
+  "edits": [
+    {
+      "change": "import datatime -> datetime",
+      "count": 1
+    },
+    {
+      "change": "SustainabilityGuard ledger source fix",
+      "count": 1
+    },
+    {
+      "change": "audit_chain.append -> commit",
+      "count": 2
+    },
+    {
+      "change": "process(): move safe_in before role inference",
+      "count": 1
+    },
+    {
+      "change": "alias LegacyPlanner for javu_agi.planner.Planner",
+      "count": 1
+    },
+    {
+      "change": "_rescore_plan(): rewrite to remove scored2 bug and add gates",
+      "count": 1
+    },
+    {
+      "change": "Skill induction default OFF via env gate",
+      "count": 1
+    }
+  ]
+}

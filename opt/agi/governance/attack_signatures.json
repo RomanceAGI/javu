@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "patterns": [
+    {"id": "prompt_injection_basic", "regex": "(?i)(ignore.*previous|override.*instructions)"},
+    {"id": "exfil_keys", "regex": "(?i)(\\bsk-[a-z0-9]{20,}\\b|api[_-]?key)"},
+    {"id": "rce_shell", "regex": "(?i)(;\\s*rm\\s+-rf\\s+/|;\\s*curl\\s+http)"},
+    {"id": "pii_common", "regex": "(?i)(nik|ktp|npwp|passport|ssn|credit\\s*card)"},
+    {"id": "credential_grab", "regex": "(?i)(\\.netrc|id_rsa|known_hosts|\\.aws/credentials)"}
+  ]
+}

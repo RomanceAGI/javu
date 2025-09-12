@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "goals": [
+    {"id":"g_energy_clean","text":"Eksplorasi & akselerasi proyek energi bersih berbiaya rendah untuk masyarakat."},
+    {"id":"g_health_access","text":"Perbaiki akses informasi kesehatan yang aman & etis (tanpa diagnosis final)."},
+    {"id":"g_edu_ai","text":"Pengembangan kurikulum AI etis untuk sekolah menengah."}
+  ]
+}

@@ -1,0 +1,30 @@
+{"task":"Analisis 3 risiko etis penerapan AI di pendidikan + mitigasi praktis.","category":"ethics","difficulty":"transfer"}
+{"task":"Rancang rute belajar 2 minggu untuk memahami GraphQL dari nol.","category":"planning","difficulty":"transfer"}
+{"task":"Jelaskan cara kerja DNS resolusi nama ke IP dalam 3 langkah.","category":"networking","difficulty":"transfer"}
+{"task":"Bandingkan 3 format serialisasi (JSON, YAML, MsgPack) + trade-off.","category":"data","difficulty":"transfer"}
+{"task":"Susun checklist peluncuran landing page (SEO dasar, analytics, form).","category":"web","difficulty":"transfer"}
+{"task":"Tuliskan strategi backup & restore untuk database kecil harian.","category":"db","difficulty":"transfer"}
+{"task":"Jelaskan secure cookie vs localStorage untuk auth di web.","category":"security","difficulty":"transfer"}
+{"task":"Rancang eksperimen sederhana mengukur latency API (p50/p95/p99).","category":"ops","difficulty":"transfer"}
+{"task":"Buat 5 aturan menulis dokumentasi API yang mudah dipahami.","category":"documentation","difficulty":"transfer"}
+{"task":"Jelaskan apa itu CAP theorem dan contoh implikasinya.","category":"systems","difficulty":"transfer"}
+{"task":"Rancang checklist aksesibilitas (a11y) untuk halaman web sederhana.","category":"web","difficulty":"transfer"}
+{"task":"Susun SOP rotasi API key & audit pemakaian bulanan.","category":"governance","difficulty":"transfer"}
+{"task":"Buat script CLI kecil untuk mengarsipkan log >7 hari.","category":"ops","difficulty":"transfer"}
+{"task":"Jelaskan pagination vs infinite scroll + kapan dipakai.","category":"web","difficulty":"transfer"}
+{"task":"Susun struktur pitch deck 10 slide untuk AGI startup.","category":"business","difficulty":"transfer"}
+{"task":"Buat 8 prinsip desain prompt ramah non-teknis.","category":"prompting","difficulty":"transfer"}
+{"task":"Rancang flow upload dokumen → ekstrak teks → index RAG.","category":"data","difficulty":"transfer"}
+{"task":"Jelaskan trade-off precompute embedding vs on-demand.","category":"systems","difficulty":"transfer"}
+{"task":"Susun SOP respons insiden kebocoran kunci (.env bocor).","category":"security","difficulty":"transfer"}
+{"task":"Buat 5 eksperimen kecil untuk menguji konsistensi jawaban model.","category":"evaluation","difficulty":"transfer"}
+{"task":"Rancang checklist preflight Docker image (healthcheck, non-root, size).","category":"devops","difficulty":"transfer"}
+{"task":"Jelaskan apa itu circuit breaker dan kapan aktif.","category":"systems","difficulty":"transfer"}
+{"task":"Susun 6 kebijakan privasi pengguna versi ringkas untuk beta publik.","category":"governance","difficulty":"transfer"}
+{"task":"Buat plan integrasi voice TTS untuk demo publik (cache & rate-limit).","category":"systems","difficulty":"transfer"}
+{"task":"Jelaskan memory leak vs cache bloat + indikator deteksinya.","category":"ops","difficulty":"transfer"}
+{"task":"Rancang skema tagging task bank agar sampler adaptif.","category":"learning","difficulty":"transfer"}
+{"task":"Buat rencana kampanye peluncuran Twitter/LinkedIn 1 minggu.","category":"growth","difficulty":"transfer"}
+{"task":"Jelaskan mekanisme auth sederhana untuk sandbox publik (JWT).","category":"security","difficulty":"transfer"}
+{"task":"Susun eksperimen 'no-context vs RAG' pada 30 pertanyaan fakta.","category":"research","difficulty":"transfer"}
+{"task":"Buat kerangka laporan mingguan progress ke publik (angka + demo).","category":"documentation","difficulty":"transfer"}

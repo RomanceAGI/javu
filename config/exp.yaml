@@ -1,0 +1,43 @@
+exp_name: "javu_agi_v0"
+seed: 42
+deterministic: false
+
+tracking:
+  mlflow_uri: "file:./mlruns"
+  run_tags:
+    stage: "dev"
+    build: "v0"
+
+artifacts_dir: "artifacts"
+checkpoints_dir: "checkpoints"
+
+data:
+  manifest_path: "data/manifest.yaml"
+
+eval:
+  daily_limit: 200
+  write_json: "arena_logs/daily/latest.json"
+
+gating_targets:
+  arena: 0.80
+  transfer: 0.85
+  adversarial: 0.90
+  soak: 48
+  human: 4.0
+
+prometheus:
+  enabled: true
+  host: "0.0.0.0"
+  port: 9200
+
+queue:
+  redis_url: "redis://redis:6379/0"
+  default_timeout: 1800
+
+storage:
+  postgres_dsn: "postgresql://javu:javu@pg:5432/javu"
+  minio:
+    endpoint: "http://minio:9000"
+    access_key: "javu"
+    secret_key: "javu12345"
+    bucket: "javu-artifacts"

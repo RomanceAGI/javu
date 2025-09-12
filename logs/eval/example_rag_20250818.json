@@ -1,0 +1,13 @@
+{
+  "suite": "rag_core",
+  "date": "2025-08-18",
+  "exact_match": 0.87,
+  "faithfulness": 0.96,
+  "cite_coverage": 0.99,
+  "avg_latency_ms": 920,
+  "n": 260,
+  "breakdown": {
+    "wikipedia_science": 0.88,
+    "software_docs": 0.86
+  }
+}

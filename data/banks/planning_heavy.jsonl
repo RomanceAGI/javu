@@ -1,0 +1,30 @@
+{"task":"Rancang roadmap 4 minggu untuk mencapai Transfer-300 ≥85% (minggu-per-minggu, metrik, risiko).","category":"planning","difficulty":"hard"}
+{"task":"Decompose objective 'public beta' jadi epics, tasks, dan acceptance criteria yang terukur.","category":"planning","difficulty":"hard"}
+{"task":"Susun RACI chart untuk operasi harian AGI (ops, data, safety, product).","category":"planning","difficulty":"hard"}
+{"task":"Buat work-back schedule untuk demo investor 14 hari (milestone, owner, alat ukur).","category":"planning","difficulty":"hard"}
+{"task":"Rancang governance meeting mingguan: agenda, input, output, keputusan.","category":"planning","difficulty":"medium"}
+{"task":"Definisikan OKR Q1 untuk tim 2 orang yang fokus training & launch.","category":"planning","difficulty":"medium"}
+{"task":"Peta risiko 12 butir (likelihood×impact) + mitigasi untuk beta publik.","category":"planning","difficulty":"hard"}
+{"task":"Buat SOP perubahan konfigurasi LLM router (review, rollout, rollback).","category":"planning","difficulty":"medium"}
+{"task":"Rancang playbook outage LLM provider (fallback, degrade mode, komunikasi).","category":"planning","difficulty":"hard"}
+{"task":"Susun jalur eskalasi insiden keamanan (24h, 72h) dan notifikasi.","category":"planning","difficulty":"hard"}
+{"task":"Buat template design doc fitur baru (latar, opsi, keputusan, dampak).","category":"planning","difficulty":"medium"}
+{"task":"Rancang program red-team internal bulanan (target, peran, laporan).","category":"planning","difficulty":"hard"}
+{"task":"Definisikan gating kriteria sebelum membuka akses umum (cap, risk, observability).","category":"planning","difficulty":"hard"}
+{"task":"Susun playbook penanganan PR/komunitas saat terjadi kesalahan publik.","category":"planning","difficulty":"hard"}
+{"task":"Roadmap integrasi Claude bertahap tanpa downtime (shadow→canary→full).","category":"planning","difficulty":"hard"}
+{"task":"Buat kerangka eksperimen pricing beta $5–$10: hipotesis, metrik, segmentasi.","category":"planning","difficulty":"medium"}
+{"task":"Rancang checklist pre-mortem sebelum launch (apa yang bisa gagal?).","category":"planning","difficulty":"medium"}
+{"task":"Susun weekly ops review: metrik inti, eskalasi, tindakan prioritas.","category":"planning","difficulty":"medium"}
+{"task":"Buat matrix prioritisasi (impact×effort) untuk backlog skill baru.","category":"planning","difficulty":"medium"}
+{"task":"Definisikan Definition of Done (DoD) untuk skill baru (tes, eval, doc).","category":"planning","difficulty":"medium"}
+{"task":"Rancang jalur legal minimal (ToS, Privacy, AUP) untuk beta.","category":"planning","difficulty":"hard"}
+{"task":"Susun peta dependency antar modul (memory, tools, router, policy).","category":"planning","difficulty":"medium"}
+{"task":"Blueprint scale-out runner: berapa container, queue, quota, dan rate-limit.","category":"planning","difficulty":"hard"}
+{"task":"Buat plan mitigasi vendor lock-in (abstract client, feature parity, test).","category":"planning","difficulty":"hard"}
+{"task":"Rancang program feedback founder-led 20 pengguna pertama (skrip & logging).","category":"planning","difficulty":"medium"}
+{"task":"Susun kalender publikasi progress 8 minggu (blog, X, demo).","category":"planning","difficulty":"medium"}
+{"task":"Buat checklist privasi data pengguna (masking, delete request, export).","category":"planning","difficulty":"hard"}
+{"task":"Definisikan SLO untuk beta (latency p95, error rate, downtime).","category":"planning","difficulty":"medium"}
+{"task":"Rancang mekanisme feature flag untuk mode eksperimen berisiko.","category":"planning","difficulty":"medium"}
+{"task":"Susun peta eskalasi keamanan jika ada abuse (block, rate-limit, report).","category":"planning","difficulty":"hard"}

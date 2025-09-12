@@ -1,0 +1,87 @@
+version: "3.9"
+
+services:
+  api:
+    build: .
+    container_name: javu-api
+    command: uvicorn api_server:app --host 0.0.0.0 --port 8080
+    env_file: [.env]
+    ports:
+      - "8080:8080"   # API (reverse proxy via nginx di produksi)
+      - "9200:9200"   # Prometheus metrics exporter
+    volumes:
+      - ./:/app
+      - mlruns:/app/mlruns
+      - arena_logs:/app/arena_logs
+      - checkpoints:/app/checkpoints
+      - artifacts:/app/artifacts/data
+      - logs:/app/logs
+    depends_on:
+      - redis
+      - pg
+      - minio
+    restart: always
+
+  worker:
+    build: .
+    container_name: javu-worker
+    command: bash -lc 'PYTHONPATH=/app rq worker -u ${REDIS_URL:-redis://redis:6379/0} javu'
+    env_file: [.env]
+    volumes:
+      - ./:/app
+      - mlruns:/app/mlruns
+      - arena_logs:/app/arena_logs
+      - checkpoints:/app/checkpoints
+      - artifacts:/app/artifacts
+      - logs:/app/logs
+    depends_on:
+      - redis
+      - pg
+      - minio
+    restart: always
+
+  redis:
+    image: redis:7
+    container_name: javu-redis
+    # NOTE: di produksi, sebaiknya JANGAN expose port ini ke publik
+    ports:
+      - "6379:6379"
+    restart: always
+
+  pg:
+    image: postgres:16
+    container_name: javu-pg
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-javu}
+      POSTGRES_USER: ${POSTGRES_USER:-javu}
+      POSTGRES_DB: ${POSTGRES_DB:-javu}
+    # NOTE: di produksi, sebaiknya JANGAN expose port ini ke publik
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: always
+
+  minio:
+    image: minio/minio
+    container_name: javu-minio
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ACCESS_KEY:-javu}
+      MINIO_ROOT_PASSWORD: ${MINIO_SECRET_KEY:-javu12345}
+    # NOTE: di produksi, sebaiknya JANGAN expose port ini ke publik
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - minio:/data
+    restart: always
+
+volumes:
+  mlruns: {}
+  arena_logs: {}
+  checkpoints: {}
+  artifacts: {}
+  logs: {}
+  pgdata: {}
+  minio: {}

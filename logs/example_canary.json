@@ -1,0 +1,28 @@
+{
+  "date": "2025-08-20",
+  "stable": {
+    "requests": 5400,
+    "avg_latency_ms": 120,
+    "error_rate": 0.02,
+    "reasoning_score": 0.65,
+    "rag_precision": 0.72,
+    "token_cost_usd": 4.85
+  },
+  "canary": {
+    "requests": 600,
+    "avg_latency_ms": 155,
+    "error_rate": 0.08,
+    "reasoning_score": 0.71,
+    "rag_precision": 0.76,
+    "token_cost_usd": 0.72
+  },
+  "decision": "KEEP CANARY (score up, cost acceptable)"
+}
+
+#kalau gagal
+{
+  "date": "2025-08-21",
+  "stable.error_rate": 0.02,
+  "canary.error_rate": 0.22,
+  "decision": "ROLLBACK to stable, disable canary"
+}

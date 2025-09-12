@@ -1,0 +1,46 @@
+name: generator-check
+on:
+  push: { branches: ["**"] }
+  pull_request: {}
+jobs:
+  validate-generators:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install -r requirements.txt
+      - name: App flow sanity
+        run: |
+          python - <<'PY'
+          from tool_appgen import generate_app_flow
+          s = generate_app_flow("Aplikasi to-do dengan auth, offline cache, dan reminder")
+          print(s[:300])
+          PY
+      - name: Unity script sanity
+        run: |
+          python - <<'PY'
+          from tool_unity_gen import generate_unity_script
+          s = generate_unity_script("Player controller 2D dengan jump, dash, dan coyote time")
+          print(s.splitlines()[0:10])
+          PY
+      - name: Quality logs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: quality-logs
+          path: logs/quality.jsonl
+          
+python - <<'PY'
+from tool_summarizer import summarize
+from tool_translator import translate
+from tool_code_gen import generate_code
+from tool_schema import generate_schema
+from tool_appgen import generate_app_flow
+from tool_unity_gen import generate_unity_script
+print("SUM:", summarize("Tulisan panjang tentang ekologi dan AI")[:120])
+print("TRN:", translate("We build a planetary-first REAL AGI")[:120])
+print("COD:", generate_code("CLI to print system info")[:120])
+print("SCH:", generate_schema("E-commerce app with cart, checkout, orders")[:120])
+print("APP:", generate_app_flow("Banking mobile app with OTP & budgeting")[:120])
+print("UNI:", generate_unity_script("2D player controller with jump & dash")[:120])
+PY

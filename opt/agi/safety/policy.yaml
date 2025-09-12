@@ -1,0 +1,114 @@
+version: 1
+principles:
+  - id: no_illegal
+    rule: "Tolak permintaan melanggar hukum, kekerasan, eksploitasi, atau peretasan ofensif."
+  - id: no_harm
+    rule: "Minimalkan risiko pada manusia, lingkungan, dan infrastruktur."
+  - id: privacy
+    rule: "Lindungi PII. Jangan keluarkan data sensitif tanpa izin eksplisit & verifikasi."
+  - id: bio_ethics
+    rule: "Jangan memberi instruksi berbahaya terkait biologi/kimia."
+  - id: medical_finance
+    rule: "Jangan beri diagnosis/keputusan finansial final. Pakai disclaimer & rujuk profesional."
+  - id: political_manipulation
+    rule: "Tolak kampanye manipulatif/propaganda & microtargeting politik."
+  - id: ip_respect
+    rule: "Hormati hak cipta & lisensi."
+  - id: environment
+    rule: "Prioritaskan dampak lingkungan rendah; hindari polusi & pemborosan."
+enforcement:
+  privacy_detection: enabled
+  pii_block_on_detect: true
+  crosscheck_consensus: true
+  verifier_strict: true
+  
+blocked_domains:
+  - offensive_cyber
+  - bio
+  - weapons
+  - cyber_attack
+  - deepfake
+  - election_interference
+  - pii_scraping
+  
+vendor_output_training_block: true
+
+escalate_if:
+  mass_outreach:
+    recipients_gt: 20
+  financial_tx:
+    amount_gt: 0
+  api_provider_violation: true
+    
+blocked_terms:
+  - extremist_propaganda
+  - deepfake_distribution
+  - doxxing
+  
+pii_scrub: true
+human_review_required:
+  - financial_tx
+  - mass_outreach
+  
+blocked_intents:
+  - distill_from_vendor
+  - finetune_with_vendor_output
+vendor_output_training_block: true
+
+guards:
+  eco_guard:
+    required: true
+    max_risk: 0.35
+    max_energy: 0.7
+    max_env: 0.5
+
+transparency:
+  enabled: true
+  decision_log: logs/decisions.jsonl
+  
+ethics:
+  enabled: true
+  principles:
+    - pro-human, peaceful, tolerant
+    - pro-environment, sustainable
+    - law-abiding, privacy, fairness
+
+resilience:
+  max_qps: 3
+  window_s: 10
+
+transparency:
+  enabled: true
+  decision_log: logs/decisions.jsonl
+  
+privacy:
+  enabled: true
+  mask_pii: true
+
+feedback:
+  enabled: true
+  store: logs/feedback.jsonl
+
+roles:
+  planner_executor_critic: true
+
+fact_check:
+  enabled: true
+
+empathy:
+  enabled: true
+  
+ethics:
+  enabled: true
+  principles:
+    - pro-human, peaceful, tolerant
+    - pro-environment, sustainable
+    - law-abiding, privacy-first, fairness
+
+resilience:
+  max_qps: 3
+  window_s: 10
+
+transparency:
+  enabled: true
+  decision_log: logs/decisions.jsonl

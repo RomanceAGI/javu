@@ -1,0 +1,20 @@
+{"task":"Desain alur text→speech (ElevenLabs) dengan cache by hash.","category":"systems","difficulty":"medium"}
+{"task":"Rancang rate-limit TTS per user & global.","category":"safety","difficulty":"medium"}
+{"task":"Susun fallback ketika TTS gagal (text-only + log).","category":"ops","difficulty":"easy"}
+{"task":"Buat kebijakan konten audio (larangan & filter).","category":"governance","difficulty":"medium"}
+{"task":"Rancang evaluasi naturalness subjektif skala 1–5.","category":"evaluation","difficulty":"medium"}
+{"task":"Integrasikan voice command aman (whitelist intent).","category":"safety","difficulty":"hard"}
+{"task":"Buat flow privasi audio: tidak simpan raw tanpa consent.","category":"governance","difficulty":"medium"}
+{"task":"Susun SOP penanganan permintaan penghapusan audio.","category":"governance","difficulty":"medium"}
+{"task":"Rancang demo publik voice dengan budget guard.","category":"growth","difficulty":"medium"}
+{"task":"Definisikan metrik TTS: latency, cache-hit, error rate.","category":"ops","difficulty":"medium"}
+{"task":"Buat tester noise injection untuk uji robustness perintah suara.","category":"security","difficulty":"hard"}
+{"task":"Susun flow transkripsi audio→teks aman (opsional jika pakai ASR).","category":"systems","difficulty":"medium"}
+{"task":"Rancang anti-jailbreak fonetik (kata kode tertentu di-ban).","category":"security","difficulty":"hard"}
+{"task":"Buat guideline persona suara untuk demo (netral, profesional).","category":"product","difficulty":"easy"}
+{"task":"Desain log audit untuk request audio (hash, user, length).","category":"ops","difficulty":"medium"}
+{"task":"Susun evaluasi subjective ABX untuk 2 voice berbeda.","category":"evaluation","difficulty":"medium"}
+{"task":"Rancang akses audio hanya untuk akun terverifikasi.","category":"safety","difficulty":"medium"}
+{"task":"Buat checklist aksesibilitas audio (caption alternatif).","category":"product","difficulty":"easy"}
+{"task":"Integrasikan speaker diarization (opsional) untuk multi-pembicara.","category":"systems","difficulty":"hard"}
+{"task":"Definisikan fallback saat audio ≥30s (batasi/deny + saran).","category":"safety","difficulty":"medium"}

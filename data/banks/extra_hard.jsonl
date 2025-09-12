@@ -1,0 +1,29 @@
+{"task":"Desain evaluator meta-reasoning: cek konsistensi langkah & kontradiksi internal.","category":"evaluation","difficulty":"hard"}
+{"task":"Rancang 'plan-critic-execute' dengan gating biaya & rollback aman.","category":"planning","difficulty":"hard"}
+{"task":"Blueprint world-model ringan: prior, observation, update, uncertainty—dengan contoh update.","category":"reasoning","difficulty":"hard"}
+{"task":"Skema red-team untuk RAG: injeksi, data leakage, jailbreak—dan mitigasi.","category":"security","difficulty":"hard"}
+{"task":"Eksperimen bandit konteks untuk memilih template prompt terbaik.","category":"experiment","difficulty":"hard"}
+{"task":"Protokol soak 96 jam + auto-recover (watchdog & restart policy).","category":"ops","difficulty":"hard"}
+{"task":"Desain evaluator factuality dengan cross-check multi-sumber.","category":"evaluation","difficulty":"hard"}
+{"task":"Rancang aggregator hasil multi-LLM (vote, score, tiebreak).","category":"systems","difficulty":"hard"}
+{"task":"Skema self-play generator: sampling, scoring, pruning—dengan pseudocode.","category":"learning","difficulty":"hard"}
+{"task":"Kebijakan data governance publik: retensi, anonimisasi, takedown request.","category":"governance","difficulty":"hard"}
+{"task":"Mekanisme quarantining output berisiko: queue review + SLA.","category":"safety","difficulty":"hard"}
+{"task":"Ablation study: pengaruh context window (4,8,12 item) pada akurasi & biaya.","category":"research","difficulty":"hard"}
+{"task":"Rancang evaluator 'execution risk' untuk tool sensitif (file, shell).","category":"safety","difficulty":"hard"}
+{"task":"Arsitektur multi-agent kolaboratif untuk proyek 1 minggu (peran & konsensus).","category":"multiagent","difficulty":"hard"}
+{"task":"Desain cache hierarkis (mem→disk→remote) + invalidasi.","category":"systems","difficulty":"hard"}
+{"task":"Protokol pengumpulan hard-cases otomatis dari log (regex & rule).","category":"data","difficulty":"hard"}
+{"task":"Rencana kompresi memori semantik (clustering, centroid, pin top-k).","category":"memory","difficulty":"hard"}
+{"task":"Eksperimen 'few-shot vs tool-use vs RAG' pada coding set internal.","category":"research","difficulty":"hard"}
+{"task":"Desain reward shaping dengan penalti halusinasi & bonus verifikasi.","category":"learning","difficulty":"hard"}
+{"task":"Skema pembobotan sampler: easy:medium:hard = 2:5:3, adaptif via EMA.","category":"learning","difficulty":"hard"}
+{"task":"Rancang mekanisme graceful-degrade saat provider LLM down (mode offline).","category":"systems","difficulty":"hard"}
+{"task":"Strategy pengurangan biaya 50% lewat cache+router+batching—rencana eksekusi.","category":"cost","difficulty":"hard"}
+{"task":"Desain audit lengkap untuk tool execution (I/O, waktu, user).","category":"governance","difficulty":"hard"}
+{"task":"Rancang 'confidence calibration' berbasis outcome historis.","category":"reasoning","difficulty":"hard"}
+{"task":"Protokol public demo aman: gating, limit, anonymization, rollback.","category":"ops","difficulty":"hard"}
+{"task":"Evaluasi adversarial multilingual tanpa bias budaya.","category":"security","difficulty":"hard"}
+{"task":"Desain 'objective memory' untuk goal jangka panjang & progress.","category":"identity","difficulty":"hard"}
+{"task":"Rencana migrasi ke multi-provider (OpenAI+Claude) tanpa downtime.","category":"systems","difficulty":"hard"}
+{"task":"Skema publish progress mingguan dengan reproducibility (seed, set).","category":"documentation","difficulty":"hard"}

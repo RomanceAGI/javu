@@ -1,0 +1,5 @@
+{
+  "rewriter_present": true,
+  "bias_audit_hooks": true,
+  "notes": "Fairness rewrite_if_needed called in process(); fairness scoring in _rescore_plan()."
+}

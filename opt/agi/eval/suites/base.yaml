@@ -1,0 +1,27 @@
+suite: base
+episodes: 100
+domains:
+  - name: research
+    weight: 0.35
+    goals:
+      - "Ringkas 3 sumber terpercaya tentang energi terbarukan dan rancang rencana aksi kota kecil."
+      - "Evaluasi risiko & manfaat proyek desalinasi rendah emisi."
+  - name: coding
+    weight: 0.25
+    goals:
+      - "Refactor modul Python untuk stabilitas & logging, tambah test."
+      - "Tulis skrip ETL sederhana dari CSV ke SQLite + validasi."
+  - name: productivity
+    weight: 0.25
+    goals:
+      - "Susun roadmap kuartal untuk tim riset AI beranggotakan 6 orang."
+      - "Desain SOP penanganan insiden P1 yang etis & transparan."
+  - name: environment
+    weight: 0.15
+    goals:
+      - "Rencana pengurangan sampah plastik kantor 30% dalam 90 hari."
+      - "Audit konsumsi listrik lab & rekomendasi hemat energi."
+metrics:
+  min_success_rate: 0.70
+  max_exec_errors_per_ep: 0.30
+  max_pii_leak: 0.0

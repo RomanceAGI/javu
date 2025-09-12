@@ -1,0 +1,25 @@
+{"task":"Susun baseline hardening Ubuntu (SSH key only, ufw, fail2ban).","category":"security","difficulty":"medium"}
+{"task":"Rancang skema rotate secrets & audit trace.","category":"security","difficulty":"hard"}
+{"task":"Buat allowlist domain untuk RAG & blok default-deny.","category":"security","difficulty":"medium"}
+{"task":"Tulis kebijakan logging aman: mask PII & secret.","category":"security","difficulty":"medium"}
+{"task":"Rancang deteksi prompt injection sederhana (keyword & pattern).","category":"security","difficulty":"medium"}
+{"task":"Susun SOP respon insiden ×72 jam (komunikasi & bukti).","category":"security","difficulty":"hard"}
+{"task":"Buat playbook backup & recovery offsite mingguan.","category":"security","difficulty":"medium"}
+{"task":"Rancang pengujian fuzz input untuk endpoint publik.","category":"security","difficulty":"hard"}
+{"task":"Buat guard sandbox: blok network, path traversal, import berbahaya.","category":"security","difficulty":"hard"}
+{"task":"Susun kebijakan akses RBAC untuk operator & viewer.","category":"security","difficulty":"medium"}
+{"task":"Rancang rate-limit adaptif per-IP & per-user.","category":"security","difficulty":"medium"}
+{"task":"Buat SOP patch CVE penting (SLA & verifikasi).","category":"security","difficulty":"medium"}
+{"task":"Desain honey-token untuk deteksi kebocoran secret.","category":"security","difficulty":"hard"}
+{"task":"Susun kebijakan retention & purge log sensitif.","category":"security","difficulty":"medium"}
+{"task":"Rancang kontrol CORS aman untuk dashboard internal.","category":"security","difficulty":"medium"}
+{"task":"Buat daftar pengecekan waktu rilis (security gate).","category":"security","difficulty":"medium"}
+{"task":"Desain audit trail eksekusi tool (hash input/output).","category":"security","difficulty":"hard"}
+{"task":"Susun protokol enkripsi at-rest & in-transit (TLS & disk).","category":"security","difficulty":"medium"}
+{"task":"Rancang uji adversarial multilingual (contoh 10 kasus).","category":"security","difficulty":"hard"}
+{"task":"Buat SOP putus akses cepat saat akun disusupi.","category":"security","difficulty":"medium"}
+{"task":"Susun daftar golongan data (publik, internal, rahasia).","category":"security","difficulty":"easy"}
+{"task":"Rancang kebijakan sharing data anon untuk riset.","category":"security","difficulty":"medium"}
+{"task":"Buat flow validasi file upload (ukuran, tipe, antivirus).","category":"security","difficulty":"hard"}
+{"task":"Susun mitigasi DoS via prompt panjang (cap & early abort).","category":"security","difficulty":"medium"}
+{"task":"Rancang verifikasi signature pada artefak rilis.","category":"security","difficulty":"hard"}

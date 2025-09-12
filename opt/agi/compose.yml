@@ -1,0 +1,57 @@
+version: "3.9"
+services:
+  api_stable:
+    image: ghcr.io/yourorg/agi:stable   # ganti sesuai repo image lo; boleh "build: ."
+    restart: unless-stopped
+    env_file:
+      - /opt/agi/.env
+    environment:
+      ENV: "prod"
+      PORT: "8000"
+      DATA_DIR: "/data"
+      LOG_DIR: "/logs"
+      ARTIFACTS_DIR: "/artifacts"
+      METRICS_DIR: "/data/metrics"
+      DISTILL_ENABLED: "true"
+    volumes:
+      - /data:/data
+      - /logs:/logs
+      - /artifacts:/artifacts
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:8000/healthz"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+    networks: [aginet]
+    ports:
+      - "127.0.0.1:8001:8000"   # hanya listen di localhost
+
+  api_canary:
+    image: ghcr.io/yourorg/agi:canary   # tag baru untuk canary
+    restart: unless-stopped
+    env_file:
+      - /opt/agi/.env
+    environment:
+      ENV: "prod"
+      PORT: "8000"
+      DATA_DIR: "/data"
+      LOG_DIR: "/logs"
+      ARTIFACTS_DIR: "/artifacts"
+      METRICS_DIR: "/data/metrics"
+      DISTILL_ENABLED: "true"
+    volumes:
+      - /data:/data
+      - /logs:/logs
+      - /artifacts:/artifacts
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:8000/healthz"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+    networks: [aginet]
+    ports:
+      - "127.0.0.1:8002:8000"
+
+networks:
+  aginet:
+    driver: bridge

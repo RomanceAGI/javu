@@ -1,0 +1,187 @@
+version: 1
+
+defaults:
+  caps_required: [text]
+  strict_caps: true
+  # biaya + guard global (dev values; naikkan perlahan kalau perlu)
+  max_cost_usd_per_req: 5
+  budget:
+    usd_per_hour: 2
+    usd_per_day: 20
+  ratelimit:
+    rpm_global: 120
+    tpm_global: 200000
+    concurrent_global: 32
+  retry:
+    max_retries: 2
+    retry_on: [timeout, 429, 5xx]
+    backoff: exponential
+    base_ms: 200
+    max_ms: 5000
+  circuit_breaker:
+    error_rate_hard: 0.15
+    min_requests: 30
+    open_seconds: 60
+  cache:
+    enabled: true
+    ttl_s: 600
+    max_tokens_cached: 2000000
+
+compliance:
+  # batasi endpoint supaya gak pernah menyentuh jalur training
+  allowed_endpoints: [chat, responses, tools, embeddings, audio, images]
+  denied_endpoints: [finetune, train, batches_train, datasets, distill]
+  pii_scrub: true
+  jailbreak_shield: strict
+  geo:
+    allow: [US, EU, SG]
+    block_export_controls: true
+  logging:
+    audit: true
+    fields: [ts, provider, model, caps, tokens_in, tokens_out, cost_usd, latency_ms, endpoint, decision]
+
+providers:
+  - name: openai
+    rpm: 60
+    tpm: 100000
+    concurrent: 16
+    tos_enforce: true
+    region_pins: [US, EU, SG]
+    models:
+      - id: gpt-5
+        caps: [text, tools, vision]
+      - id: gpt-5-mini
+        caps: [text, tools]
+      - id: gpt-4o
+        caps: [text, vision]
+      - id: gpt-image-1
+        caps: [image_gen]
+      - id: gpt-audio
+        caps: [tts]
+      - id: whisper-1
+        caps: [stt]
+      - id: text-embedding-3-large
+        caps: [embed]
+      - id: text-embedding-3-small
+        caps: [embed]
+
+  - name: anthropic
+    rpm: 60
+    tpm: 100000
+    concurrent: 16
+    tos_enforce: true
+    region_pins: [US, EU, SG]
+    models:
+      - id: claude-3.5-sonnet
+        caps: [text, tools]
+      - id: claude-3.5-haiku
+        caps: [text]
+      - id: claude-opus-4
+        caps: [text]
+
+  - name: elevenlabs
+    enabled: false         # aktifkan kalau sudah siap langganan
+    rpm: 30
+    tpm: 50000
+    concurrent: 8
+    tos_enforce: true
+    models:
+      - id: elevenlabs-v2
+        caps: [tts]
+
+roll:
+  strategy: ucb1           # atau "softmax"
+  cooldown_success_seconds: 15
+  cooldown_error_seconds: 60
+
+failover:
+  backoff: exponential
+  cooldown_seconds: 30
+  order:
+    - openai:gpt-5
+    - anthropic:claude-3.5-sonnet
+    - openai:gpt-5-mini
+    - anthropic:claude-3.5-haiku
+
+rules:
+  - match_intent: planning
+    caps_required: [text]
+    prefer:
+      - anthropic:claude-3.5-haiku
+      - anthropic:claude-3.5-sonnet
+      - openai:gpt-5
+
+  - match_intent: execution
+    caps_required: [text, tools]
+    prefer:
+      - openai:gpt-5
+      - anthropic:claude-3.5-sonnet
+      - openai:gpt-5-mini
+
+  - match_intent: critique
+    caps_required: [text]
+    prefer:
+      - anthropic:claude-3.5-sonnet
+      - openai:gpt-5
+      - anthropic:claude-3.5-haiku
+
+  - match_intent: empathy
+    caps_required: [text]
+    prefer:
+      - anthropic:claude-3.5-sonnet
+      - openai:gpt-5
+      - anthropic:claude-3.5-haiku
+
+  - match_intent: long_context
+    caps_required: [text, 200k]
+    prefer:
+      - anthropic:claude-3.5-sonnet
+      - anthropic:claude-opus-4
+      - openai:gpt-5
+
+  - match_intent: tools
+    caps_required: [text, tools]
+    prefer:
+      - openai:gpt-5
+      - anthropic:claude-3.5-sonnet
+      - openai:gpt-5-mini
+
+  - match_intent: vision
+    caps_required: [text, vision]
+    prefer:
+      - openai:gpt-5
+      - openai:gpt-4o
+
+  - match_intent: image
+    caps_required: [image_gen]
+    prefer:
+      - openai:gpt-image-1
+
+  - match_intent: speech
+    caps_required: [tts]
+    prefer:
+      - openai:gpt-audio
+      # - elevenlabs:elevenlabs-v2
+
+  - match_intent: stt
+    caps_required: [stt]
+    prefer:
+      - openai:whisper-1
+
+  - match_intent: search
+    caps_required: [text, search]
+    prefer:
+      - openai:gpt-4o      # gunakan mode pencarian/alat eksternal di layer tools
+
+  - match_intent: embed
+    caps_required: [embed]
+    prefer:
+      - openai:text-embedding-3-large
+      - openai:text-embedding-3-small
+      
+    - match_intent: safety_review
+      caps_required: [text]
+      prefer:
+        - anthropic:claude-3.5-haiku
+        - openai:gpt-5-mini
+        - anthropic:claude-3.5-sonnet

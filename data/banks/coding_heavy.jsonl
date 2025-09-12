@@ -1,0 +1,56 @@
+{"task":"Implementasikan LRU cache sederhana (kapasitas N) dengan get/put O(1).","category":"code","difficulty":"hard"}
+{"task":"Tulis parser argumen CLI kecil (subcommand run/eval) tanpa library eksternal.","category":"code","difficulty":"medium"}
+{"task":"Buat util untuk mengukur waktu eksekusi fungsi (decorator) + contoh pemakaian.","category":"code","difficulty":"medium"}
+{"task":"Refactor fungsi 200 baris menjadi modul terpisah dengan SRP; jelaskan pemotongan modul.","category":"code","difficulty":"hard"}
+{"task":"Tulis fungsi diff dua dict (added/removed/changed) mengembalikan dict ringkas.","category":"code","difficulty":"medium"}
+{"task":"Implementasi simple event bus (subscribe/publish) in-proc dengan once handler.","category":"code","difficulty":"medium"}
+{"task":"Buat pool worker sederhana berbasis queue untuk menjalankan tugas CPU-bound kecil.","category":"code","difficulty":"medium"}
+{"task":"Tulis mini JSON schema validator untuk field wajib & tipe dasar.","category":"code","difficulty":"medium"}
+{"task":"Bangun sandbox eksekusi Python: blokir import berbahaya, batas waktu 3s, batas mem 256MB (pseudo/real).","category":"code","difficulty":"hard"}
+{"task":"Implementasikan exponential backoff dengan jitter dan batas total waktu.","category":"code","difficulty":"medium"}
+{"task":"Tulis util normalisasi path dan pencegahan path traversal.","category":"code","difficulty":"medium"}
+{"task":"Buat library kecil untuk result type (Ok/Err) ala Rust dengan pattern matching sederhana.","category":"code","difficulty":"medium"}
+{"task":"Implementasi state machine generik (states, transitions, guard, action).","category":"code","difficulty":"hard"}
+{"task":"Tulis mini templating ({{var}}) tanpa eval untuk render string aman.","category":"code","difficulty":"medium"}
+{"task":"Buat util rolling file logger (maks 10MB, simpan 5 berkas arsip).","category":"code","difficulty":"medium"}
+{"task":"Implementasikan rate limiter token bucket; uji 3 skenario.","category":"code","difficulty":"hard"}
+{"task":"Tulis fungsi kompresi list string menjadi run-length encoding dan kebalikannya.","category":"code","difficulty":"medium"}
+{"task":"Bangun mini DSL untuk mendeskripsikan pipeline (YAML→objek→eksekusi).","category":"code","difficulty":"hard"}
+{"task":"Implementasikan trie untuk prefix search dengan operasi insert/find/delete.","category":"code","difficulty":"hard"}
+{"task":"Buat util streaming read file besar (chunk) dan hitung checksum incremental.","category":"code","difficulty":"medium"}
+{"task":"Tulis router HTTP minimal (path params, query, middleware) tanpa framework besar.","category":"code","difficulty":"hard"}
+{"task":"Buat script yang menormalkan baris akhir (LF) di semua file .sh dan set executable bit.","category":"code","difficulty":"medium"}
+{"task":"Implementasikan memoization dengan TTL menggunakan functools.lru_cache sebagai baseline.","category":"code","difficulty":"medium"}
+{"task":"Refactor kode synchronous menjadi async (aiohttp) untuk panggilan paralel ke API.","category":"code","difficulty":"hard"}
+{"task":"Bangun util checksum paket (hash + ukuran + versi) untuk verifikasi artefak.","category":"code","difficulty":"medium"}
+{"task":"Tulis fungsi merapikan trace stack ke 10 frame teratas yang relevan.","category":"code","difficulty":"medium"}
+{"task":"Implementasi priority queue dengan heap untuk penjadwalan tugas.","category":"code","difficulty":"medium"}
+{"task":"Buat util konversi markdown→plain text dengan preservasi list & headings.","category":"code","difficulty":"medium"}
+{"task":"Implementasikan parser CSV toleran kesalahan (quote/escape ganda) + 3 test.","category":"code","difficulty":"medium"}
+{"task":"Tulis library kecil retry idempotent untuk operasi file I/O yang flaky.","category":"code","difficulty":"medium"}
+{"task":"Bangun evaluator AST sederhana untuk ekspresi aritmetika aman.","category":"code","difficulty":"hard"}
+{"task":"Implementasi simple plugin system (discover, load, run) via entrypoints.json.","category":"code","difficulty":"medium"}
+{"task":"Refactor fungsi yang mengandung side-effects menjadi pure functions + adapter.","category":"code","difficulty":"hard"}
+{"task":"Buat util konversi prompt → format Claude (system+turns) dan OpenAI (messages).","category":"code","difficulty":"medium"}
+{"task":"Implementasikan konsolidasi memori: dedup berbasis hash+simhash dengan threshold.","category":"code","difficulty":"hard"}
+{"task":"Tulis fungsi deteksi circular import sederhana pada graph dependensi modul.","category":"code","difficulty":"medium"}
+{"task":"Bangun mini scheduler cron-like (minute granularity) in-process.","category":"code","difficulty":"hard"}
+{"task":"Implementasi parser .env dengan dukungan quotes, escaping, dan comments.","category":"code","difficulty":"medium"}
+{"task":"Buat util untuk menghitung token kasar (≈ len/4) dan estimasi biaya.","category":"code","difficulty":"medium"}
+{"task":"Tulis fungsi split dokumen jadi chunk 1200±200 token dengan overlap 10%.","category":"code","difficulty":"medium"}
+{"task":"Implementasikan konsensus sederhana multi-agent (vote mayoritas + tiebreak).","category":"code","difficulty":"hard"}
+{"task":"Bangun cache hierarkis (RAM→disk) dengan policy LRU dan TTL.","category":"code","difficulty":"hard"}
+{"task":"Tulis util scrubber PII (email, phone, api key) pakai regex aman.","category":"code","difficulty":"medium"}
+{"task":"Implementasi circuit breaker (closed→open→half-open) untuk call LLM.","category":"code","difficulty":"hard"}
+{"task":"Buat analyzer untuk menghitung coverage penggunaan tools dari log eksekusi.","category":"code","difficulty":"medium"}
+{"task":"Tulis adapter log ke format JSON lines konsisten (ts, level, event, meta).","category":"code","difficulty":"medium"}
+{"task":"Bangun evaluator langkah reasoning: cek konsistensi dan missing steps (heuristik).","category":"code","difficulty":"hard"}
+{"task":"Implementasi safe YAML loader (tanpa konstruktor arbitrer).","category":"code","difficulty":"medium"}
+{"task":"Buat util untuk penjadwalan ulang task gagal dengan strategi backoff & cap.","category":"code","difficulty":"medium"}
+{"task":"Refactor modul besar menjadi package dengan `__init__` ekspor rapi + tests.","category":"code","difficulty":"hard"}
+{"task":"Implementasikan monitor file .stop (graceful shutdown) + resume state.","category":"code","difficulty":"medium"}
+{"task":"Tulis util hashing deterministik untuk dict/list (ordering-independent).","category":"code","difficulty":"hard"}
+{"task":"Bangun mini profiler (wall time per step) dan cetak top-N hot steps.","category":"code","difficulty":"medium"}
+{"task":"Implementasi validator skema message {role, content} + error jelas.","category":"code","difficulty":"medium"}
+{"task":"Buat normalizer teks (unicode NFC, strip kontrol, collapse whitespace).","category":"code","difficulty":"medium"}
+{"task":"Implementasi batching request LLM dengan penggabungan prompt serupa.","category":"code","difficulty":"hard"}

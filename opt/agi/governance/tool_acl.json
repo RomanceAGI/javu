@@ -1,0 +1,2 @@
+{"default_allow":["search","code","spreadsheet","shell"],"default_deny":["net_scan"],
+ "users":{"roman":{"allow":["image","voice"],"deny":["shell"]}}}

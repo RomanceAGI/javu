@@ -1,0 +1,8 @@
+FROM python:3.11-slim
+RUN useradd -ms /bin/bash worker
+USER worker
+WORKDIR /app
+RUN pip install --no-cache-dir fastapi uvicorn jq
+ENV WORKER_TIMEOUT=10
+EXPOSE 9090
+CMD ["uvicorn","javu_agi.tools.worker_runner:app","--host","0.0.0.0","--port","9090"]

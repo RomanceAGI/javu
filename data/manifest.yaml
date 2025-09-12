@@ -1,0 +1,5 @@
+task_banks:
+  arena_eval.jsonl: {sha256: "<fill>", version: "2025-08-14", license: "internal"}
+  transfer_eval.jsonl: {sha256: "<fill>", version: "2025-08-14", license: "internal"}
+datasets:
+  multimodal_v1: {path: "s3://javu/ds/v1", samples: 12_345_678, pii: "scrubbed"}

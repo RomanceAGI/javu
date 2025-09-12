@@ -1,0 +1,7 @@
+enabled: true
+modes:
+  deny_all_tools: false
+  read_only: true
+  offline_only: false
+messages:
+  deny: "Sementara dinonaktifkan demi keselamatan."

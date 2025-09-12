@@ -1,0 +1,25 @@
+{"task":"Jelaskan bukti sederhana kenapa akar(2) irasional (ide utama).","category":"math","difficulty":"hard"}
+{"task":"Tentukan kompleksitas waktu untuk quicksort rata-rata & terburuk.","category":"math","difficulty":"medium"}
+{"task":"Hitung probabilitas 2 dadu jumlahnya 7.","category":"math","difficulty":"easy"}
+{"task":"Buat contoh counterexample untuk distributivitas pembagian.","category":"math","difficulty":"medium"}
+{"task":"Uraikan konsep gradient descent dan learning rate.","category":"math","difficulty":"medium"}
+{"task":"Jelaskan teorema Bayes dengan contoh numerik sederhana.","category":"math","difficulty":"medium"}
+{"task":"Buat pembuktian by contradiction untuk pernyataan sederhana.","category":"math","difficulty":"hard"}
+{"task":"Hitung ekspektasi pelemparan koin 3 kali untuk jumlah kepala.","category":"math","difficulty":"easy"}
+{"task":"Rancang soal word-problem dan selesaikan langkah demi langkah.","category":"math","difficulty":"medium"}
+{"task":"Jelaskan eigenvalue/eigenvector secara intuitif.","category":"math","difficulty":"medium"}
+{"task":"Tulis algoritma Euclid untuk GCD + contoh.","category":"math","difficulty":"easy"}
+{"task":"Buktikan jumlah bilangan ganjil pertama n sama dengan n^2 (sketsa).","category":"math","difficulty":"medium"}
+{"task":"Buat contoh kegagalan heuristik greedy pada optimasi.","category":"math","difficulty":"hard"}
+{"task":"Jelaskan hukum de Morgan dan contoh logika.","category":"math","difficulty":"easy"}
+{"task":"Susun soal kombinatorika kecil (permutasi/kombo) + jawab.","category":"math","difficulty":"medium"}
+{"task":"Tunjukkan contoh fungsi konveks & non-konveks.","category":"math","difficulty":"medium"}
+{"task":"Jelaskan central limit theorem intuitif.","category":"math","difficulty":"hard"}
+{"task":"Hitung korelasi sederhana dua vektor data kecil.","category":"math","difficulty":"medium"}
+{"task":"Buat pembuktian induksi sederhana untuk deret aritmetika.","category":"math","difficulty":"hard"}
+{"task":"Jelaskan regularization L1 vs L2 & efeknya.","category":"math","difficulty":"medium"}
+{"task":"Contoh paradox Monty Hall + solusi.","category":"math","difficulty":"medium"}
+{"task":"Tulis transformasi logit dan kegunaannya.","category":"math","difficulty":"medium"}
+{"task":"Hitung jarak kosinus dua vektor pendek.","category":"math","difficulty":"easy"}
+{"task":"Rancang tugas geometri analitik sederhana + penyelesaian.","category":"math","difficulty":"medium"}
+{"task":"Jelaskan konsep NP-complete secara intuitif.","category":"math","difficulty":"hard"}

@@ -1,0 +1,11 @@
+name: rag
+version: 1
+items:
+  - id: g1
+    type: qa
+    query: "Apa judul dokumen yang membahas arsitektur router LLM di repo ini?"
+    answer: "router"    # sesuaikan dengan korpus lo
+  - id: g2
+    type: qa
+    query: "File mana yang menyimpan konfigurasi tier limit user?"
+    answer: ".env"

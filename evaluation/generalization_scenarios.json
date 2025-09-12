@@ -1,0 +1,22 @@
+[
+  {
+    "prompt": "Jika semua burung bisa terbang, dan burung unta tidak bisa terbang, apa artinya?",
+    "expect": "pengecualian logis"
+  },
+  {
+    "prompt": "Bagaimana cara belajar hal yang belum diketahui oleh siapa pun?",
+    "expect": "strategi eksplorasi"
+  },
+  {
+    "prompt": "Gunakan logika permainan untuk menjelaskan hubungan sosial.",
+    "expect": "analogi lintas domain"
+  },
+  {
+    "prompt": "Tanpa menyebut komputer atau teknologi, jelaskan cara kerja AI.",
+    "expect": "abstraksi konseptual"
+  },
+  {
+    "prompt": "Jika kamu belajar bahasa alien tanpa kamus, bagaimana kamu mulai?",
+    "expect": "generalization / inference"
+  }
+]

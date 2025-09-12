@@ -1,0 +1,25 @@
+{"task":"Jelaskan perbedaan DNA, RNA, dan protein secara ringkas.","category":"bio","difficulty":"easy"}
+{"task":"Rancang pipeline ekstraksi info dari artikel biomed (judul→entitas→ringkas).","category":"bio","difficulty":"hard"}
+{"task":"Susun kamus istilah biostatistik dasar (p-value, CI, power).","category":"bio","difficulty":"medium"}
+{"task":"Buat SOP etika penggunaan data kesehatan anonim.","category":"bio","difficulty":"hard"}
+{"task":"Jelaskan CRISPR-Cas9 pada level konsep, 3 kalimat.","category":"bio","difficulty":"medium"}
+{"task":"Rancang skema RAG untuk literatur PubMed + policy sitasi.","category":"bio","difficulty":"hard"}
+{"task":"Susun 5 indikator kualitas studi klinik (randomisasi, blinding, n).","category":"bio","difficulty":"medium"}
+{"task":"Buat template ekstraksi tabel dari PDF jurnal (kolom standar).","category":"bio","difficulty":"medium"}
+{"task":"Jelaskan perbedaan observational vs randomized trial.","category":"bio","difficulty":"easy"}
+{"task":"Rancang evaluator fakta biomed (cek entitas + referensi).","category":"bio","difficulty":"hard"}
+{"task":"Susun SOP review safety bila ada saran medis—harus disclaimer.","category":"bio","difficulty":"hard"}
+{"task":"Buat list 10 sumber data biomed terbuka + lisensi.","category":"bio","difficulty":"medium"}
+{"task":"Jelaskan konsep metabolisme dasar & contoh jalur.","category":"bio","difficulty":"easy"}
+{"task":"Rancang pipeline NER biomed → normalisasi ke ontologi (MeSH/GO).","category":"bio","difficulty":"hard"}
+{"task":"Buat rubric penilaian ringkasan paper (ketepatan, kelengkapan, sumber).","category":"bio","difficulty":"medium"}
+{"task":"Jelaskan perbedaan viral load vs antibody titer.","category":"bio","difficulty":"medium"}
+{"task":"Susun mitigasi bahaya: jangan buat protokol lab basah eksplisit.","category":"bio","difficulty":"hard"}
+{"task":"Rancang workflow QA untuk tabel dosis/efek sebelum ditampilkan publik.","category":"bio","difficulty":"hard"}
+{"task":"Jelaskan single-cell RNA-seq (konsep).","category":"bio","difficulty":"medium"}
+{"task":"Buat kebijakan konten: non-diagnostik, edukasi saja.","category":"bio","difficulty":"easy"}
+{"task":"Susun flow klarifikasi saat pertanyaan medis spesifik muncul.","category":"bio","difficulty":"hard"}
+{"task":"Rancang prompt template konservatif untuk domain biomed.","category":"bio","difficulty":"medium"}
+{"task":"Definisikan metrik factuality khusus biomed (exact-entity match).","category":"bio","difficulty":"hard"}
+{"task":"Buat daftar kontrol akses untuk data sensitif (RBAC).","category":"bio","difficulty":"hard"}
+{"task":"Jelaskan risiko bias dataset klinik & mitigasi.","category":"bio","difficulty":"medium"}

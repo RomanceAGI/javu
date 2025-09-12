@@ -1,0 +1,29 @@
+{"task":"Rancang kurikulum 10 hari belajar Kubernetes dasar.","category":"devops","difficulty":"transfer"}
+{"task":"Jelaskan cara kerja WebSocket vs HTTP long-polling singkat.","category":"web","difficulty":"transfer"}
+{"task":"Susun SOP backup S3 harian + verifikasi restore.","category":"ops","difficulty":"transfer"}
+{"task":"Bandingkan PostGIS vs plain Postgres untuk data geospasial.","category":"db","difficulty":"transfer"}
+{"task":"Jelaskan ETL vs ELT + kapan dipakai.","category":"data","difficulty":"transfer"}
+{"task":"Rancang checklist audit privasi untuk aplikasi beta publik.","category":"governance","difficulty":"transfer"}
+{"task":"Susun plan integrasi captcha yang ramah aksesibilitas.","category":"web","difficulty":"transfer"}
+{"task":"Jelaskan isolation level database & dampaknya.","category":"db","difficulty":"transfer"}
+{"task":"Buat 5 aturan desain API untuk mobile connection lambat.","category":"web","difficulty":"transfer"}
+{"task":"Rancang flow 'offline mode' untuk klien desktop sederhana.","category":"systems","difficulty":"transfer"}
+{"task":"Jelaskan apa itu SIMD dan contoh pemakaian sederhana.","category":"hardware","difficulty":"transfer"}
+{"task":"Susun SOP rotasi log & retensi 30 hari.","category":"ops","difficulty":"transfer"}
+{"task":"Buat rencana eksperimen latency dengan 3 lokasi region cloud.","category":"ops","difficulty":"transfer"}
+{"task":"Jelaskan trade-off GraphQL vs REST untuk tim kecil.","category":"web","difficulty":"transfer"}
+{"task":"Rancang flow versi model (v1,v1.1,rollback) dan tagging output.","category":"mlops","difficulty":"transfer"}
+{"task":"Susun daftar 8 metrik evaluasi generative QA berbasis RAG.","category":"evaluation","difficulty":"transfer"}
+{"task":"Jelaskan teknik anti-scraping dasar untuk halaman publik.","category":"security","difficulty":"transfer"}
+{"task":"Rancang struktur dokumentasi developer (getting started, api, ops).","category":"documentation","difficulty":"transfer"}
+{"task":"Buat plan pengujian e2e sederhana untuk sandbox publik.","category":"testing","difficulty":"transfer"}
+{"task":"Jelaskan trade-off batching request LLM (throughput vs latency).","category":"cost","difficulty":"transfer"}
+{"task":"Susun rencana data labeling ringan dari user feedback (thumbs up/down).","category":"learning","difficulty":"transfer"}
+{"task":"Buat flow error budget mingguan & tindakan saat over budget.","category":"ops","difficulty":"transfer"}
+{"task":"Jelaskan konsep immutability image Docker & manfaatnya.","category":"devops","difficulty":"transfer"}
+{"task":"Rancang flow penyimpanan rahasia menggunakan KMS.","category":"security","difficulty":"transfer"}
+{"task":"Susun 10 poin 'responsible AI' untuk halaman publik.","category":"ethics","difficulty":"transfer"}
+{"task":"Buat SOP respon insiden downtime 30 menit.","category":"ops","difficulty":"transfer"}
+{"task":"Rancang alur 'consent & opt-out' untuk data pengguna beta.","category":"governance","difficulty":"transfer"}
+{"task":"Jelaskan apa itu Bloom filter dan contoh kegunaannya.","category":"data","difficulty":"transfer"}
+{"task":"Buat rencana eksperimen efek context window terhadap akurasi.","category":"research","difficulty":"transfer"}

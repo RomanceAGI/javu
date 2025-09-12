@@ -1,0 +1,11 @@
+name: agent
+version: 1
+items:
+  - id: a1
+    type: qa
+    query: "Buat rencana 3 langkah: 'setup proyek, tulis tes, jalankan evaluasi'. Tampilkan bullet."
+    answer: "setup;tes;evaluasi"
+  - id: a2
+    type: qa
+    query: "Refleksikan kesalahan umum saat konfigurasi Redis rate limit di FastAPI."
+    answer: "429;sliding window;ttl"

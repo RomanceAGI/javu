@@ -1,0 +1,7 @@
+exporters:
+  otlp:
+    endpoint: ${OTLP_ENDPOINT:http://localhost:4317}
+service:
+  pipelines:
+    traces: { receivers: [otlp], exporters: [otlp] }
+    metrics:{ receivers: [otlp], exporters: [otlp] }

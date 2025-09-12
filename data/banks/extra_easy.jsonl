@@ -1,0 +1,30 @@
+{"task":"Definisikan 'latency' vs 'throughput' 1 kalimat tiap istilah.","category":"systems","difficulty":"easy"}
+{"task":"Buat 5 aturan penamaan branch git yang rapi.","category":"devops","difficulty":"easy"}
+{"task":"Contoh 3 tipe data primitif Python.","category":"code","difficulty":"easy"}
+{"task":"Apa itu environment variable dan contohnya.","category":"ops","difficulty":"easy"}
+{"task":"Sebutkan 3 alasan logging penting.","category":"ops","difficulty":"easy"}
+{"task":"Buat 5 poin etika penggunaan AI di kantor.","category":"ethics","difficulty":"easy"}
+{"task":"Jelaskan REST vs RPC singkat.","category":"web","difficulty":"easy"}
+{"task":"3 cara mengurangi biaya komputasi cloud.","category":"cost","difficulty":"easy"}
+{"task":"Apa itu idempotent API?","category":"web","difficulty":"easy"}
+{"task":"5 contoh metrik operasional (p50/p95, error rate, QPS, CPU).","category":"ops","difficulty":"easy"}
+{"task":"Sebutkan 3 format file teks umum (CSV, JSON, MD).","category":"data","difficulty":"easy"}
+{"task":"Apa itu prompt chaining? Beri 1 contoh sederhana.","category":"prompting","difficulty":"easy"}
+{"task":"Kapan pakai queue/asynchronous job?","category":"systems","difficulty":"easy"}
+{"task":"3 aturan menulis README yang bagus.","category":"documentation","difficulty":"easy"}
+{"task":"Apa itu CORS dalam web.","category":"web","difficulty":"easy"}
+{"task":"Sebutkan 3 risiko menyimpan secret di repo.","category":"security","difficulty":"easy"}
+{"task":"Apa itu pagination di API.","category":"web","difficulty":"easy"}
+{"task":"Contoh 3 HTTP status code penting.","category":"web","difficulty":"easy"}
+{"task":"Kenapa monitoring ≠ alerting?","category":"ops","difficulty":"easy"}
+{"task":"5 langkah menulis issue bug yang jelas.","category":"project","difficulty":"easy"}
+{"task":"Apa itu SLA/SLI/SLO singkat.","category":"ops","difficulty":"easy"}
+{"task":"3 kelebihan container dibanding VM.","category":"systems","difficulty":"easy"}
+{"task":"Kapan pakai cache vs database?","category":"systems","difficulty":"easy"}
+{"task":"Contoh input valid untuk endpoint /users POST.","category":"web","difficulty":"easy"}
+{"task":"Apa itu schema validation?","category":"data","difficulty":"easy"}
+{"task":"3 praktik aman mengelola API key.","category":"security","difficulty":"easy"}
+{"task":"Apa bedanya staging dan production?","category":"devops","difficulty":"easy"}
+{"task":"Tulis 5 tips menulis komentar kode.","category":"code","difficulty":"easy"}
+{"task":"Definisi feature flag + manfaatnya.","category":"project","difficulty":"easy"}
+{"task":"Apa itu rate limiting?","category":"security","difficulty":"easy"}

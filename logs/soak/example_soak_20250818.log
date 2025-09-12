@@ -1,0 +1,3 @@
+2025-08-18T00:00Z start soak: target_qps=0.3, duration=8h
+2025-08-18T04:01Z health ok, mem=1.2GB, p95=1.2s, errors=0
+2025-08-18T08:00Z end soak: uptime=100%, errors=0, mem_leak=+90MB

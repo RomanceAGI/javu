@@ -1,0 +1,25 @@
+{"task":"Susun ToS ringkas untuk beta publik (batasan, anti-abuse, hak).","category":"law","difficulty":"hard"}
+{"task":"Buat Privacy Policy sederhana (data, tujuan, retensi, kontak).","category":"law","difficulty":"hard"}
+{"task":"Rancang AUP (acceptable use) untuk mencegah misuse.","category":"law","difficulty":"medium"}
+{"task":"Jelaskan perbedaan PII vs anon data & kebijakan penanganannya.","category":"law","difficulty":"medium"}
+{"task":"Susun mekanisme DMCA takedown sederhana.","category":"law","difficulty":"medium"}
+{"task":"Buat panduan hak cipta konten yang dihasilkan AI (disclaimer).","category":"law","difficulty":"medium"}
+{"task":"Rancang proses consent pengguna (opt-in, opt-out).","category":"law","difficulty":"hard"}
+{"task":"Susun klausul batas tanggung jawab & warranty.","category":"law","difficulty":"hard"}
+{"task":"Buat SOP permintaan penghapusan data (data subject request).","category":"law","difficulty":"hard"}
+{"task":"Jelaskan dasar GDPR/CCPA pada level konsep untuk startup kecil.","category":"law","difficulty":"medium"}
+{"task":"Rancang kebijakan moderasi konten publik (eskalasi & bukti).","category":"law","difficulty":"medium"}
+{"task":"Susun perjanjian beta tester (NDA ringan + etika).","category":"law","difficulty":"medium"}
+{"task":"Buat daftar cookie & tujuannya; kebijakan transparansi.","category":"law","difficulty":"easy"}
+{"task":"Rancang kebijakan bug bounty kecil yang aman.","category":"law","difficulty":"medium"}
+{"task":"Susun template DPA ringan dengan vendor LLM.","category":"law","difficulty":"hard"}
+{"task":"Buat kebijakan penggunaan data untuk perbaikan sistem (opt-in).","category":"law","difficulty":"medium"}
+{"task":"Rancang pernyataan keselamatan untuk eksperimen robotik publik.","category":"law","difficulty":"hard"}
+{"task":"Susun ketentuan penggunaan API publik (rate-limit, attribution).","category":"law","difficulty":"medium"}
+{"task":"Buat SOP pelaporan konten berbahaya oleh publik.","category":"law","difficulty":"medium"}
+{"task":"Rancang kebijakan penyimpanan log & masking field sensitif.","category":"law","difficulty":"medium"}
+{"task":"Susun catatan lisensi pihak ketiga (OSS) yang dipakai sistem.","category":"law","difficulty":"easy"}
+{"task":"Buat ringkasan kewajiban aksesibilitas dasar (a11y).","category":"law","difficulty":"medium"}
+{"task":"Rancang template persetujuan eksplisit untuk penggunaan suara.","category":"law","difficulty":"medium"}
+{"task":"Susun kebijakan kendali ekspor (export control) tingkat tinggi.","category":"law","difficulty":"hard"}
+{"task":"Buat panduan komunikasi krisis hukum (pernyataan awal).","category":"law","difficulty":"hard"}

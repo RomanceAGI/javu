@@ -1,0 +1,2 @@
+{"input":"Formatkan daftar: [3,1,2] → urut menaik.","expected":"1, 2, 3"}
+{"input":"Format ulang kalimat jadi bullet 3 poin tentang fotosintesis.","expected":"fotosintesis"}

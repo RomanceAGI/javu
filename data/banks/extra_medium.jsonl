@@ -1,0 +1,29 @@
+{"task":"Tulis util Python konversi CRLF→LF untuk semua file .sh dalam folder.","category":"ops","difficulty":"medium"}
+{"task":"Rancang skema retry (max 3, backoff 1s,2s,4s) untuk call LLM.","category":"systems","difficulty":"medium"}
+{"task":"Buat template ISSUE bug dengan field minimal yang wajib.","category":"project","difficulty":"medium"}
+{"task":"Implementasikan parser log (JSON lines) → agregasi error rate per menit.","category":"code","difficulty":"medium"}
+{"task":"Buat checklist keamanan server Docker (non-root, no sudo, readonly FS).","category":"security","difficulty":"medium"}
+{"task":"Rancang struktur `metrics_exporter` HTTP sederhana (health, counters).","category":"obs","difficulty":"medium"}
+{"task":"Tulis fungsi scoring sederhana dari {pass,partial,fail} → {1,0.5,0}.","category":"evaluation","difficulty":"medium"}
+{"task":"Susun 10 aturan desain prompt untuk coding assistant.","category":"prompting","difficulty":"medium"}
+{"task":"Buat util hashing input+tool untuk cache result (SHA256).","category":"systems","difficulty":"medium"}
+{"task":"Tulis 5 test unit untuk MemoryManager.merge().","category":"testing","difficulty":"medium"}
+{"task":"Rancang format event eksekusi tool: start, end, duration, status.","category":"ops","difficulty":"medium"}
+{"task":"Buat skrip CLI untuk memotong log > 100MB dan arsipkan zip.","category":"ops","difficulty":"medium"}
+{"task":"Definisikan kebijakan TTL memori episodik & semantik (angka wajar).","category":"memory","difficulty":"medium"}
+{"task":"Bandingkan 3 strategi sharding bank task (by domain, by diff, by recency).","category":"data","difficulty":"medium"}
+{"task":"Implementasikan limiter biaya per-request (cap $0.10), tolak jika estimasi > cap.","category":"cost","difficulty":"medium"}
+{"task":"Rancang flow fallback model: main → secondary → fail-safe response.","category":"systems","difficulty":"medium"}
+{"task":"Buat util normalisasi whitespace & unicode untuk input user.","category":"code","difficulty":"medium"}
+{"task":"Susun 6 aturan sandbox Python (import allowlist, no network, cwd terbatas).","category":"safety","difficulty":"medium"}
+{"task":"Tulis modul kecil untuk mendeteksi prompt injection keyword dasar.","category":"security","difficulty":"medium"}
+{"task":"Rancang format laporan mingguan: metrik inti + 3 studi kasus + biaya.","category":"documentation","difficulty":"medium"}
+{"task":"Implementasikan counter Prometheus untuk 'tool_error_total' per nama tool.","category":"obs","difficulty":"medium"}
+{"task":"Buat contoh `docker healthcheck` yang cocok untuk service AGI.","category":"devops","difficulty":"medium"}
+{"task":"Rancang job 'consolidation nightly' + pseudocode.","category":"memory","difficulty":"medium"}
+{"task":"Tulis util split dokumen → chunk 1k–1.5k token + overlap 10%.","category":"data","difficulty":"medium"}
+{"task":"Buat 5 skenario evaluasi coding (bugfix, refactor, docstring, test).","category":"evaluation","difficulty":"medium"}
+{"task":"Desain flow 'clarify-first' saat uncertainty > 0.6.","category":"reasoning","difficulty":"medium"}
+{"task":"Rancang audit trail untuk perubahan konfigurasi runtime.","category":"governance","difficulty":"medium"}
+{"task":"Implementasikan filter profanity ringan untuk mode publik.","category":"safety","difficulty":"medium"}
+{"task":"Buat util estimasi token kasar (tok = ceil(len(text)/4)).","category":"cost","difficulty":"medium"}

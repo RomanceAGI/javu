@@ -1,0 +1,200 @@
+version: "3.9"
+
+api:
+    build: .
+    command: uvicorn api_server:app --host 0.0.0.0 --port 8080 --workers 1
+    environment:
+      - METRICS_DIR=/data/metrics
+      - RESULT_CACHE_DIR=/data/cache
+      - SKILL_CACHE_DIR=/data/skills
+      - POLICY_HARD=1
+      - VERIFY_STRICT=1
+      - MBRL_ENSEMBLE=1
+      - MBRL_RISK_PEN=0.6
+      - MBRL_CONF_GAIN=0.2
+      - W_HUMAN=0.5
+      - W_ENV=0.3
+      - W_PRIVACY=0.15
+      - W_SECURITY=0.05
+      # - TOOL_WORKER_URL=http://worker:9000   # set kalau punya worker
+    volumes:
+      - ./data:/data
+    ports: ["8080:8080"]
+    restart: unless-stopped
+    
+x-secure: &secure
+  read_only: true
+  tmpfs:
+    - /tmp:rw,noexec,nosuid,size=64m
+  cap_drop: ["ALL"]
+  security_opt:
+    - no-new-privileges:true
+  pids_limit: 256
+  mem_limit: 6g
+  cpus: "4.0"
+  ulimits:
+    nofile:
+      soft: 16384
+      hard: 32768
+  restart: unless-stopped
+
+services:
+  cognition:
+    <<: *secure
+    image: python:3.11-slim
+    working_dir: /app
+    command: >
+      bash -lc "pip install --no-cache-dir uvicorn fastapi pydantic
+      && uvicorn server:app --host 0.0.0.0 --port 8080"
+    environment:
+      - PYTHONDONTWRITEBYTECODE=1
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./:/app:ro
+      - ./trace:/data/trace:rw
+      - ./rewards:/data/rewards:rw
+      - ./backups:/data/backups:rw
+    ports:
+      - "8080:8080"
+    depends_on:
+      - qdrant
+      - postgres
+      - redis
+      - minio
+    networks: [agi_net]
+
+  world-model:
+    <<: *secure
+    image: python:3.11-slim
+    working_dir: /app
+    command: bash -lc "pip install --no-cache-dir fastapi uvicorn && uvicorn wm_server:app --host 0.0.0.0 --port 8081"
+    volumes:
+      - ./:/app:ro
+    ports: ["8081:8081"]
+    networks: [agi_net]
+
+  memory:
+    <<: *secure
+    image: python:3.11-slim
+    working_dir: /app
+    command: bash -lc "pip install --no-cache-dir fastapi uvicorn qdrant-client psycopg2-binary && uvicorn mem_server:app --host 0.0.0.0 --port 8082"
+    volumes:
+      - ./:/app:ro
+    ports: ["8082:8082"]
+    networks: [agi_net]
+    depends_on: [qdrant, postgres]
+
+  reward-trace:
+    <<: *secure
+    image: python:3.11-slim
+    working_dir: /app
+    command: bash -lc "pip install --no-cache-dir fastapi uvicorn && uvicorn rt_server:app --host 0.0.0.0 --port 8083"
+    volumes:
+      - ./trace:/data/trace:rw
+      - ./rewards:/data/rewards:rw
+    ports: ["8083:8083"]
+    networks: [agi_net]
+
+  qdrant:
+    <<: *secure
+    image: qdrant/qdrant:latest
+    ports: ["6333:6333"]
+    volumes:
+      - qdrant_storage:/qdrant/storage
+    networks: [agi_net]
+
+  postgres:
+    <<: *secure
+    image: postgres:15
+    environment:
+      POSTGRES_PASSWORD: ${PG_PASSWORD}
+      POSTGRES_USER: agi
+      POSTGRES_DB: agi
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    ports: ["5432:5432"]
+    networks: [agi_net]
+
+  redis:
+    <<: *secure
+    image: redis:7-alpine
+    command: ["redis-server", "--appendonly", "yes", "--save", "900", "1", "--save", "300", "10"]
+    ports: ["6379:6379"]
+    volumes:
+      - redis_data:/data
+    networks: [agi_net]
+
+  minio:
+    <<: *secure
+    image: minio/minio:latest
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_PASS}
+    ports: ["9000:9000","9001:9001"]
+    volumes:
+      - minio_data:/data
+    networks: [agi_net]
+
+networks:
+  agi_net:
+
+volumes:
+  qdrant_storage:
+  pg_data:
+  redis_data:
+  minio_data:
+  
+    tool-worker:
+    image: agi-tool-worker:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.worker
+    environment:
+      - WORKER_TIMEOUT=10
+    networks: [agi_net]
+    <<: *secure
+    read_only: false
+    tmpfs: [" /tmp:rw,noexec,nosuid,size=64m"]
+    ports: ["9090:9090"]
+    network_mode: none
+
+  consolidator:
+    <<: *secure
+    image: python:3.11-slim
+    working_dir: /app
+    command: bash -lc "pip install --no-cache-dir fastapi uvicorn && uvicorn cons_server:app --host 0.0.0.0 --port 8084"
+    volumes:
+      - ./:/app:ro
+      - ./data:/app/data:rw
+    ports: ["8084:8084"]
+    networks: [agi_net]
+    
+      caddy:
+    image: caddy:2
+    restart: unless-stopped
+    ports: ["80:80","443:443"]
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    networks: [agi_net]
+
+services:
+  javu-agi:
+    # ...
+    read_only: true
+    tmpfs: ["/tmp:rw,noexec,nosuid,nodev","/run:rw,noexec,nosuid,nodev"]
+    security_opt:
+      - no-new-privileges:true
+      - seccomp:seccomp-min.json
+    cap_drop: ["ALL"]
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,nodev
+      - /run:rw,noexec,nosuid,nodev
+    network_mode: bridge
+       environment:
+      - FS_ALLOWLIST=/opt/agi/governance/fs_allowlist.txt
+      - TOOL_ACL_PATH=/opt/agi/governance/tool_acl.json
+

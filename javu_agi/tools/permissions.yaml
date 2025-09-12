@@ -1,0 +1,97 @@
+allow:
+  - web.get
+  - web.head
+  - storage.put_text
+  - storage.get_text
+  - telegram.send
+  - discord.post
+  - slack.post_message
+  - github.create_issue
+  - gmail.list_threads
+  - gmail.draft
+  - gcal.list_events
+  - gcal.create_event
+  - notion.search
+  - notion.create_page
+  - canva.create_design
+  - canva.publish
+  - canva.list_designs
+  - ms.files.list_site_drive
+  - audit.list
+  - audit.report
+  - audit.json
+rate_limit:
+  telegram.send: 10/min
+  slack.post_message: 20/min
+  discord.post: 20/min
+  github.create_issue: 5/min
+  notion.search: 60/min
+  notion.create_page: 30/min
+  canva.create_design: 20/min
+  canva.publish: 20/min
+  canva.list_designs: 60/min
+  ms.files.list_site_drive: 60/min
+  audit.list: 60/min
+  audit.report: 60/min
+  audit.json: 60/min
+deny:
+  - dataset.add_example
+  - dataset.*
+  - autotrain.*
+  - trainer.*
+web_search:
+  allowed_domains: ["*.wikipedia.org","*.arxiv.org","*.nature.com"]
+  max_requests_per_task: 20
+  timeout_s: 20
+shell:
+  allowed_cmds: ["python","node","grep","sed","awk"]
+  deny_patterns: ["rm -rf","mkfs","mount","ifconfig","ssh"]
+  timeout_s: 10
+  max_requests_per_task: 10
+  
+actuators:
+  require_human_approval: true
+  allowed_devices:
+    - name: simulated_arm
+    - name: simulated_mobility
+    - name: iot_switch
+    
+governance:
+  ethical_critic: required
+  transparency: required
+  privacy_guard: required
+  feedback: optional
+  fact_check: optional
+  empathy_coach: optional
+
+tools:
+  allowed:
+    - gmail
+    - gcal
+    - slack
+    - notion
+    - drive
+rbac:
+  roles:
+    - admin
+    - ops
+    - user
+  default_role: user
+  
+governance:
+  ethical_critic: required
+  transparency: required
+
+rbac:
+  roles:
+    - admin
+    - ops
+    - user
+  default_role: user
+
+vendors:
+  allow:
+    - openai
+    - anthropic
+    - elevenlabs
+  deny_local_models: true

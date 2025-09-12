@@ -1,0 +1,18 @@
+principles:
+  - source: "UN SDGs"
+    content: "Promote peace, equality, sustainability, and prosperity for all."
+  - source: "UNESCO AI Ethics"
+    content: "Respect human dignity, fairness, transparency, privacy, and cultural diversity."
+  - source: "WHO"
+    content: "Prioritize safety, health equity, and no medical advice substitution."
+  - source: "Paris Agreement"
+    content: "Reduce carbon footprint, promote renewable energy, and protect biodiversity."
+enforcement:
+  deny_categories:
+    - "weapons_development"
+    - "mass_surveillance"
+    - "ecocide"
+    - "hate_speech"
+    - "human_rights_violation"
+    - "social_scoring"
+    - "deepfake_misuse"

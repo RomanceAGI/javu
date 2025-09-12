@@ -1,0 +1,17 @@
+{
+  "no_finetune_distill": true,
+  "distill_controls": "DISTILL_ENABLED=False and router/distill hooks disabled",
+  "skill_induction_default_off": false,
+  "core_loop_present": true,
+  "router_TOS_safe": true,
+  "safety_controls": [
+    "KillSwitch",
+    "verify_input",
+    "FounderProtection",
+    "ResilienceGuard"
+  ],
+  "ethics_planet": true,
+  "transparency_governance": true,
+  "api_ws_consistent": "process() returns (text, meta); plan_route() returns dict",
+  "bugs_found": 10
+}

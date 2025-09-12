@@ -1,0 +1,29 @@
+{"task":"Desain format JSONL standar untuk bank tugas (schema & contoh).","category":"data","difficulty":"medium"}
+{"task":"Buat dedup semantik sederhana (cosine≥0.92) + fallback hash.","category":"data","difficulty":"hard"}
+{"task":"Implementasikan sampler berbobot berdasar win-rate EMA.","category":"data","difficulty":"hard"}
+{"task":"Rancang pipeline ingestion dokumen (PDF/HTML/TXT) dengan batas 2MB.","category":"data","difficulty":"medium"}
+{"task":"Buat skrip validasi bank (schema+nil checks) dengan laporan ringkas.","category":"data","difficulty":"medium"}
+{"task":"Susun katalog domain & label untuk kurikulum adaptif.","category":"data","difficulty":"medium"}
+{"task":"Rancang format metadata task: source, added_at, difficulty_score.","category":"data","difficulty":"medium"}
+{"task":"Buat utility split bank menjadi train/val dengan stratifikasi domain.","category":"data","difficulty":"medium"}
+{"task":"Implementasikan TTL untuk task usang dan mekanisme pin.","category":"data","difficulty":"medium"}
+{"task":"Rancang audit data untuk mendeteksi poison/duplikasi ekstrem.","category":"data","difficulty":"hard"}
+{"task":"Buat skrip penggabung multi-bank dengan pengurutan recency.","category":"data","difficulty":"medium"}
+{"task":"Desain pengindeksan ringan untuk lookup cepat per kategori/difficulty.","category":"data","difficulty":"medium"}
+{"task":"Rancang checksum per-file + manifest untuk bank publik.","category":"data","difficulty":"medium"}
+{"task":"Buat util sampling adversarial 10% otomatis dari kategori rawan.","category":"data","difficulty":"hard"}
+{"task":"Definisikan kebijakan revisi bank (versioning & changelog).","category":"data","difficulty":"medium"}
+{"task":"Rancang format label hasil eksekusi: pass/partial/fail + reason.","category":"data","difficulty":"medium"}
+{"task":"Buat skrip ringkasan harian per-domain (count, win-rate, cost).","category":"data","difficulty":"medium"}
+{"task":"Implementasikan index kecil (SQLite) untuk metadata bank.","category":"data","difficulty":"medium"}
+{"task":"Rancang pipeline export subset bank untuk benchmark publik.","category":"data","difficulty":"medium"}
+{"task":"Buat visualisasi distribusi kesulitan (histogram).","category":"data","difficulty":"easy"}
+{"task":"Susun rule balancing antara easy/medium/hard per batch.","category":"data","difficulty":"medium"}
+{"task":"Implementasikan penandaan otomatis 'novelty' tugas baru.","category":"data","difficulty":"hard"}
+{"task":"Buat util merge hasil run (CSV/JSONL) jadi satu laporan mingguan.","category":"data","difficulty":"medium"}
+{"task":"Rancang cache embedding lokal untuk dedup cepat.","category":"data","difficulty":"hard"}
+{"task":"Susun pipeline anonymization data sensitif sebelum masuk bank.","category":"data","difficulty":"hard"}
+{"task":"Buat alat nyapu karakter kontrol tak terlihat dari data.","category":"data","difficulty":"easy"}
+{"task":"Rancang guard untuk mencegah task bertentangan kebijakan.","category":"data","difficulty":"medium"}
+{"task":"Implementasikan penanda 'gold task' untuk sanity check.","category":"data","difficulty":"medium"}
+{"task":"Buat tool validasi multilingual (deteksi bahasa, flag jika off-policy).","category":"data","difficulty":"hard"}

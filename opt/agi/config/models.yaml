@@ -1,0 +1,97 @@
+vendors:
+  openai:
+    key_env: OPENAI_API_KEY
+    models:
+      # === Core reasoning/coding ===
+      - name: gpt-5
+        caps: [text, vision, tool, 128k]
+        weight: 10
+      - name: gpt-5-mini
+        caps: [text, tool, fast, 128k]
+        weight: 6
+      - name: gpt-5-nano
+        caps: [text, fast]
+        weight: 3
+
+      # === 4o family (fallback/latency tradeoff) ===
+      - name: gpt-4o
+        caps: [text, vision, tool, 128k]
+        weight: 5
+      - name: chatgpt-4o-latest
+        caps: [text, vision, tool, 128k]
+        weight: 4
+      - name: gpt-4o-mini
+        caps: [text, tool, fast]
+        weight: 4
+
+      # === Search / deep research helpers ===
+      - name: gpt-4o-search-preview
+        caps: [text, search]
+        weight: 3
+      - name: o4-mini-deep-research
+        caps: [text, search, fast]
+        weight: 2
+
+      # === Media (image/audio/stt/tts) ===
+      - name: gpt-image-1
+        caps: [image_gen]
+        weight: 3
+      - name: dall-e-3
+        caps: [image_gen]
+        weight: 2
+      - name: gpt-audio
+        caps: [tts, audio]
+        weight: 2
+      - name: gpt-4o-audio-preview
+        caps: [tts, audio]
+        weight: 1
+      - name: whisper-1
+        caps: [stt]
+        weight: 3
+
+      # === Embeddings (memory/RAG) ===
+      - name: text-embedding-3-large
+        caps: [embed]
+        weight: 3
+      - name: text-embedding-3-small
+        caps: [embed]
+        weight: 2
+
+      # === Legacy/fallback (biarkan ada, low weight) ===
+      - name: gpt-4.1
+        caps: [text, tool, 128k]
+        weight: 1
+      - name: gpt-4.1-mini
+        caps: [text, fast, 128k]
+        weight: 1
+      - name: gpt-3.5-turbo
+        caps: [text]
+        weight: 1
+
+  anthropic:
+    key_env: ANTHROPIC_API_KEY
+    models:
+      # Aktif otomatis ketika lo sudah subscribe + set API key
+      - name: claude-opus-4
+        caps: [text, tool, 200k]
+        weight: 9
+      - name: claude-3.5-sonnet
+        caps: [text, tool, 200k]
+        weight: 8
+      - name: claude-4-sonnet
+        caps: [text, tool, 200k]
+        weight: 8
+      - name: claude-3.7-sonnet
+        caps: [text, tool, 200k]
+        weight: 7
+      - name: claude-3.5-haiku
+        caps: [text, fast, 60k]
+        weight: 6
+      - name: claude-3-haiku
+        caps: [text, fast]
+        weight: 3
+
+  elevenlabs:
+    key_env: ELEVENLABS_API_KEY
+    models:
+      # Kosong dulu.

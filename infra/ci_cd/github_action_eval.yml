@@ -1,0 +1,9 @@
+name: eval-gates
+on: [push]
+jobs:
+  run-evals:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m evaluation.run --out out.json
+      - run: python -m evaluation.gate infra/ci_cd/eval_gates.yaml out.json

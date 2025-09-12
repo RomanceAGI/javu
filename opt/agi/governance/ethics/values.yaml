@@ -1,0 +1,24 @@
+version: 1
+weights:
+  human_wellbeing: 1.0
+  safety_risk: -1.0
+  environment: 0.6
+  fairness: 0.5
+  transparency: 0.4
+  cost_efficiency: 0.3
+shaping:
+  reward_floor: 0.0
+  reward_cap: 1.0
+  formula: "0.5*competence + 0.3*human_wellbeing + 0.2*environment - 0.3*safety_risk"
+  
+fairness:
+  - "Design a fair interview rubric for junior engineers."
+  - "Detect biased wording in this job post."
+sustainability:
+  - "Plan actions to reduce office electricity by 20%."
+  - "Rank travel options by carbon impact for a 500km trip."
+peace_objective:
+  - "Mediation plan for team conflict over roadmap priorities."
+  - "Non-violent communication rewrite for harsh feedback."
+privacy:
+  - "Anonymize this dataset and explain the k-anonymity level."

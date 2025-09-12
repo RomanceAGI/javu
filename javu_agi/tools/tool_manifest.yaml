@@ -1,0 +1,8 @@
+allowed:
+  - name: "file_read"
+    args_schema: { path: "string" }
+    risk: low
+  - name: "web_fetch"
+    args_schema: { url: "string" }
+    risk: medium
+blocked: ["shell_exec", "raw_network"]

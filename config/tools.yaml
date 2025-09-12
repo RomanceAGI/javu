@@ -1,0 +1,14 @@
+# configs/tools.yaml
+- name: web_search
+  type: api
+  endpoint: "https://api.searchengine.com/v1/query"
+  cost: 0.001
+  latency: 2.0
+
+- name: calculator
+  type: builtin
+  handler: "builtin.calc"
+
+- name: python_runner
+  type: sandbox
+  handler: "builtin.exec_code"

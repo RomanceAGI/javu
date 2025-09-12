@@ -1,0 +1,30 @@
+{"task":"Tulis healthcheck HTTP untuk service AGI (readiness & liveness).","category":"ops","difficulty":"medium"}
+{"task":"Rancang rotasi log harian + kompresi + upload arsip (ops kecil).","category":"ops","difficulty":"medium"}
+{"task":"Definisikan alarm Prometheus untuk error rate >1% selama 10m.","category":"ops","difficulty":"medium"}
+{"task":"Buat SOP rollback image Docker ke versi stabil jika error >3%.","category":"ops","difficulty":"medium"}
+{"task":"Susun pipeline evaluasi harian: arena 500, transfer 100, ringkas laporan.","category":"mlops","difficulty":"hard"}
+{"task":"Rancang tagging versi model dan konfigurasi (model@versi+router@versi).","category":"mlops","difficulty":"medium"}
+{"task":"Implementasikan checksum artefak (image, dataset) sebelum deploy.","category":"mlops","difficulty":"medium"}
+{"task":"Buat guardrail biaya: stop otomatis bila >$20/hari (file flag).","category":"ops","difficulty":"medium"}
+{"task":"Susun SOP rotasi API key dan audit penggunaan bulanan.","category":"security","difficulty":"medium"}
+{"task":"Rancang job nightly 'consolidation' + 'hard-case harvest' otomatis.","category":"mlops","difficulty":"hard"}
+{"task":"Definisikan SLA internal: MTTR insiden kecil <30 menit.","category":"ops","difficulty":"medium"}
+{"task":"Buat dashboard ops minimal (success, fail, latency, cost).","category":"ops","difficulty":"medium"}
+{"task":"Rancang pipeline canary untuk perubahan prompt/heuristik.","category":"mlops","difficulty":"hard"}
+{"task":"Tulis skrip pengecekan izin file & user non-root di container.","category":"security","difficulty":"medium"}
+{"task":"Buat SOP restore state.pkl korup dari backup.","category":"ops","difficulty":"medium"}
+{"task":"Susun rencana load test ringan (RPS rendah, p95 target, batas biaya).","category":"ops","difficulty":"medium"}
+{"task":"Rancang cold-start warmup (preload memori & cache) pas deploy.","category":"ops","difficulty":"medium"}
+{"task":"Definisikan retensi data (runtime 7 hari, logs 30 hari, banks ∞).","category":"governance","difficulty":"medium"}
+{"task":"Buat prosedur audit trail untuk tool execution (JSONL).","category":"ops","difficulty":"hard"}
+{"task":"Rancang rotasi secrets otomatis (KMS/param store) stage dev→prod.","category":"security","difficulty":"hard"}
+{"task":"Implementasikan whitelist domain untuk RAG fetcher.","category":"security","difficulty":"medium"}
+{"task":"Susun SOP patching base image OS bulanan.","category":"ops","difficulty":"medium"}
+{"task":"Buat script konsistensi folder /data (harus ada banks,runtime,logs).","category":"ops","difficulty":"easy"}
+{"task":"Rancang backup harian data penting + verifikasi integritas.","category":"ops","difficulty":"medium"}
+{"task":"Definisikan atribut log wajib dan masking field sensitif.","category":"security","difficulty":"medium"}
+{"task":"Buat protokol recovery saat provider LLM timeout massal.","category":"ops","difficulty":"hard"}
+{"task":"Rancang rule rate-limit per-IP untuk sandbox publik.","category":"security","difficulty":"medium"}
+{"task":"Susun SOP perubahan skema memori (migrasi & backward compat).","category":"mlops","difficulty":"hard"}
+{"task":"Buat quality gate sebelum rilis: uji, eval, soak 12h, checklist.","category":"ops","difficulty":"hard"}
+{"task":"Rancang rotasi dataset transfer test agar tidak overfit.","category":"mlops","difficulty":"hard"}

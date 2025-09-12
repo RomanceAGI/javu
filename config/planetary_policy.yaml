@@ -1,0 +1,14 @@
+max_co2e_day: 2000         # kg CO2e per hari (global budget AGI)
+max_water_m3_day: 500      # m3 per hari
+biodiversity_veto: true
+social_risk_max: 0.6
+sector_caps:
+  agriculture:
+    co2e_t_limit: 1.5      # ton per aksi
+    water_m3_limit: 200
+  oil_gas:
+    co2e_t_limit: 0.2      # super ketat
+    water_m3_limit: 50
+  infrastructure:
+    co2e_t_limit: 1.0
+    water_m3_limit: 150

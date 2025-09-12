@@ -1,0 +1,57 @@
+{"task":"Susun kerangka whitepaper arsitektur AGI lo (abstrak, desain, evaluasi, limitasi, etika).","category":"research","difficulty":"hard"}
+{"task":"Bandingkan RAG vs memori semantik jangka panjang untuk tugas reasoning terbuka.","category":"research","difficulty":"hard"}
+{"task":"Rancang metrik uncertainty praktis (self-reported + outcome-calibrated).","category":"research","difficulty":"hard"}
+{"task":"Kaji 5 paper terbaru soal tool-use LLM dan simpulkan benang merahnya.","category":"research","difficulty":"hard"}
+{"task":"Buat protokol eksperimen transfer ke domain finans (tanpa fine-tune).","category":"research","difficulty":"hard"}
+{"task":"Ringkas 3 sumber tentang prompt injection dan komparasi mitigasinya.","category":"research","difficulty":"medium"}
+{"task":"Rancang uji ablation curriculum (tanpa hard-cases vs dengan 30/50%).","category":"research","difficulty":"hard"}
+{"task":"Susun taxonomy error reasoning (omission, contradiction, hallucination, unsafe).","category":"research","difficulty":"medium"}
+{"task":"Kaji trade-off context panjang vs retrieval selektif pada biaya & akurasi.","category":"research","difficulty":"hard"}
+{"task":"Desain protokol reproduksibilitas laporan mingguan (seed, set, versi).","category":"research","difficulty":"medium"}
+{"task":"Evaluasi efek meta-reasoning layer terhadap win-rate arena (metodologi).","category":"research","difficulty":"hard"}
+{"task":"Susun review pendek tentang bandit contextual untuk pemilihan prompt.","category":"research","difficulty":"medium"}
+{"task":"Rancang dataset kecil untuk uji konsistensi berulang (paraphrase-flip).","category":"research","difficulty":"hard"}
+{"task":"Buat pedoman citasi sumber pada ringkasan (format dan validasi).","category":"research","difficulty":"medium"}
+{"task":"Analisis risiko data poisoning pada self-play dan mitigasinya.","category":"research","difficulty":"hard"}
+{"task":"Susun protokol red-team internal 30 task (kategori & scoring).","category":"research","difficulty":"hard"}
+{"task":"Rancang studi perbandingan planner: zero-shot vs plan-then-execute vs plan-critic-execute.","category":"research","difficulty":"hard"}
+{"task":"Kaji efektivitas ensemble ringan dua provider + evaluator heuristik.","category":"research","difficulty":"hard"}
+{"task":"Buat proposal uji soak 96 jam beserta indikator kesehatan sistem.","category":"research","difficulty":"hard"}
+{"task":"Susun template laporan incident & RCA dengan contoh kasus.","category":"research","difficulty":"medium"}
+{"task":"Rancang pipeline pembersihan data publik (dedup, PII scrub, license check).","category":"research","difficulty":"hard"}
+{"task":"Analisis biaya: strategi hemat 30–50% tanpa drop akurasi (cache, batch, routing).","category":"research","difficulty":"hard"}
+{"task":"Kaji efek gating tool ketat vs longgar terhadap produktivitas & risiko.","category":"research","difficulty":"hard"}
+{"task":"Buat daftar 20 indikator 'menuju AGI' berbasis metrik dan perilaku.","category":"research","difficulty":"hard"}
+{"task":"Susun rencana eksperimen cross-domain 10 domain untuk Transfer-500.","category":"research","difficulty":"hard"}
+{"task":"Kaji perbedaan OpenAI vs Claude pada long-form planning (literature+observasi).","category":"research","difficulty":"hard"}
+{"task":"Rancang pedoman pengumpulan umpan balik pengguna untuk label otomatis.","category":"research","difficulty":"medium"}
+{"task":"Susun protokol uji 'tool-ablation' untuk mengukur ketergantungan.","category":"research","difficulty":"hard"}
+{"task":"Buat panduan etika & privasi beta publik 1 halaman.","category":"research","difficulty":"medium"}
+{"task":"Evaluasi pengaruh window memori episodik (k=4,8,12) terhadap win-rate.","category":"research","difficulty":"hard"}
+{"task":"Kaji dampak long-context truncation terhadap fakta & konsistensi.","category":"research","difficulty":"hard"}
+{"task":"Rancang scoring rubric untuk jawaban planning (feasible/risiko/coverage).","category":"research","difficulty":"medium"}
+{"task":"Analisis nilai bisnis 3 fitur teratas untuk demo publik AGI lo.","category":"research","difficulty":"medium"}
+{"task":"Susun rencana publikasi progres (blog, X, video) mingguan.","category":"research","difficulty":"medium"}
+{"task":"Rancang eksperimen 'RAG citations required' vs 'free form' pada factuality.","category":"research","difficulty":"hard"}
+{"task":"Kaji teknik kompaktifikasi memori semantik (clustering/centroid).","category":"research","difficulty":"hard"}
+{"task":"Buat daftar 30 pertanyaan interviu akselerator yang harus dijawab sistem.","category":"research","difficulty":"medium"}
+{"task":"Susun protokol uji keamanan tool eksekusi file/shell.","category":"research","difficulty":"hard"}
+{"task":"Rancang template README publik untuk repo demo AGI + badge metrik.","category":"research","difficulty":"medium"}
+{"task":"Analisis risiko legal lisensi dataset publik yang ingin dipakai.","category":"research","difficulty":"hard"}
+{"task":"Kaji performa 'clarify-first' terhadap biaya dan akurasi.","category":"research","difficulty":"hard"}
+{"task":"Susun experimen 'self-critique' sebelum final answer (timeout/cost aware).","category":"research","difficulty":"hard"}
+{"task":"Rancang metode penilaian kualitas penulisan kode (readability/testability).","category":"research","difficulty":"hard"}
+{"task":"Kaji dampak pengaturan temperature 0.0/0.2/0.7 pada domain reasoning.","category":"research","difficulty":"medium"}
+{"task":"Susun evaluasi 'tool coverage' mingguan & tindakan perbaikan.","category":"research","difficulty":"medium"}
+{"task":"Rancang protokol 'confidence gating' untuk output publik.","category":"research","difficulty":"hard"}
+{"task":"Buat kerangka pitch 10 slide untuk NVIDIA/YC dengan metrik & demo.","category":"research","difficulty":"medium"}
+{"task":"Analisis risiko keamanan ElevenLabs TTS & mitigasi cache/ratelimit.","category":"research","difficulty":"hard"}
+{"task":"Kaji pengaruh jumlah contoh few-shot pada coding tasks internal.","category":"research","difficulty":"hard"}
+{"task":"Rancang eksperimen bandingkan 'single-provider' vs 'router multi-provider'.","category":"research","difficulty":"hard"}
+{"task":"Susun rencana audit kepatuhan data (akses, jejak, retensi).","category":"research","difficulty":"medium"}
+{"task":"Buat taksonomi penggunaan AGI di 10 industri beserta KPI awal.","category":"research","difficulty":"medium"}
+{"task":"Rancang desain demo publik: skenario, guard, rollback, metrik live.","category":"research","difficulty":"hard"}
+{"task":"Kaji peluang monetisasi awal (assistant riset, coding helper, planner).","category":"research","difficulty":"medium"}
+{"task":"Susun protokol validasi eksternal dengan benchmark publik kecil.","category":"research","difficulty":"hard"}
+{"task":"Buat daftar 'failure modes' umum dan cara mitigasinya di sistem lo.","category":"research","difficulty":"hard"}
+{"task":"Rancang uji human-in-the-loop minimal untuk kasus berisiko.","category":"research","difficulty":"medium"}

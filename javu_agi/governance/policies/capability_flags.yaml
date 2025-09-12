@@ -1,0 +1,8 @@
+tools_enabled:
+  web_browse: false
+  code_exec: false
+  robotics_actuation: false
+release_channels:
+  shadow: true
+  canary: false
+  prod: false

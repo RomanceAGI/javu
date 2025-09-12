@@ -1,0 +1,14 @@
+version: 1
+hard_constraints:
+  - id: HC-001
+    match: { action.tags: [harm, illegal, env_damage] }
+    decision: deny
+  - id: HC-002
+    match: { risk.score: ">=0.7" }
+    decision: escalate
+contextual_norms:
+  - id: LEGAL-JUR
+    compute: check_legal(context.jurisdiction, action)
+aggregator:
+  order: [hard_constraints, legal, norms, preferences]
+  default: deny_if_uncertain

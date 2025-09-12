@@ -1,0 +1,51 @@
+{"task":"Eksperimen 5 langkah ukur dampak RAG pada faithfulness (metrik, dataset, baseline, analisis).","category":"research","difficulty":"hard"}
+{"task":"Arsitektur 'tool-worker' Python sandbox (isolasi, timeout, CPU/mem cap, audit log).","category":"systems","difficulty":"hard"}
+{"task":"Decompose permintaan produk ambigu → tujuan, constraints, risiko, metrik sukses, rencana 1 minggu.","category":"planning","difficulty":"hard"}
+{"task":"Evaluator heuristik jawaban (confidence, risk penalty, length penalty) + rumus skoring.","category":"evaluation","difficulty":"hard"}
+{"task":"Skema Curriculum adaptif (bucket domain, EMA win-rate, sampler berbobot) + pseudocode.","category":"learning","difficulty":"hard"}
+{"task":"Desain pipeline task-bank (append hard-cases, sampling mix, dedup, TTL) + format JSONL.","category":"data","difficulty":"hard"}
+{"task":"Mitigasi prompt injection RAG (filtering, allowlist tool, context isolation).","category":"security","difficulty":"hard"}
+{"task":"Protokol Transfer-300 mingguan (domain baru, nol fine-tune, kriteria lulus).","category":"evaluation","difficulty":"hard"}
+{"task":"Observability: metrik inti, health checks, Prometheus exporter; contoh query alert.","category":"ops","difficulty":"hard"}
+{"task":"Routing multi-LLM berbasis task-type + cost/latency guard; flow singkat.","category":"systems","difficulty":"hard"}
+{"task":"ObjectiveManager untuk self-direction (propose, prioritize, decompose) + contoh goal.","category":"learning","difficulty":"hard"}
+{"task":"Data governance: PII scrubber, data retention, role-based access.","category":"governance","difficulty":"hard"}
+{"task":"Soak 48 jam: skenario beban, error, auto-recovery, kriteria lulus.","category":"ops","difficulty":"hard"}
+{"task":"Turunkan biaya LLM 30% (cache, distill subset, batching) tanpa jatuhkan akurasi.","category":"cost","difficulty":"hard"}
+{"task":"Evaluasi adversarial (red-team) 50 task: kategori + skor risiko.","category":"security","difficulty":"hard"}
+{"task":"World-model ringan: kalibrasi uncertainty dari outcome proxy + update harian.","category":"reasoning","difficulty":"hard"}
+{"task":"Reward shaping reasoning: sinyal +/−, normalisasi, logging.","category":"learning","difficulty":"hard"}
+{"task":"Ablation: matikan RAG/cache/heuristik; metrik perbandingan apa saja?","category":"evaluation","difficulty":"hard"}
+{"task":"SOP rollback cepat saat regresi (deteksi, revert, komunikasi, prevention).","category":"ops","difficulty":"hard"}
+{"task":"Budget guard sistem (harian & per-request) + pseudo-implementasi.","category":"cost","difficulty":"hard"}
+{"task":"Desain kontrol akses tool sensitif (allowlist, approval, rate-limit).","category":"safety","difficulty":"hard"}
+{"task":"Rancang evaluator plan otomatis (coverage, feasibility, risk) + skor 0–1.","category":"planning","difficulty":"hard"}
+{"task":"Strategi kompresi context: memori semantik + pemilihan kutipan (citations).","category":"reasoning","difficulty":"hard"}
+{"task":"Rancang eksperimen bandit untuk memilih prompt terbaik dinamis.","category":"experiment","difficulty":"hard"}
+{"task":"Protokol regression test mingguan (task tetap 200 + variasi 100).","category":"evaluation","difficulty":"hard"}
+{"task":"Desain sistem deteksi loop macet (deadlock) + auto-unstick.","category":"systems","difficulty":"hard"}
+{"task":"Rancang kontrol kualitas output: lint, schema check, factual cross-check.","category":"evaluation","difficulty":"hard"}
+{"task":"Skema penyimpanan episodic vs semantic; kebijakan TTL & pinning.","category":"memory","difficulty":"hard"}
+{"task":"Strategi anti-data-poisoning pada self-play bank.","category":"security","difficulty":"hard"}
+{"task":"Rancang format insight mingguan untuk publik (grafik + studi kasus).","category":"documentation","difficulty":"hard"}
+{"task":"Desain eksperimen 'few-shot vs tool-use' pada coding tasks.","category":"research","difficulty":"hard"}
+{"task":"Mekanisme 'clarify budget' saat uncertainty tinggi tanpa meledak biaya.","category":"cost","difficulty":"hard"}
+{"task":"Pemetaan domain → buckets kurikulum + jalur eskalasi kesulitan.","category":"learning","difficulty":"hard"}
+{"task":"Pipeline labeling otomatis untuk outcome (pass/fail/partial) dari log.","category":"evaluation","difficulty":"hard"}
+{"task":"Flow audit keamanan: dari prompt → tools → output → log bukti.","category":"safety","difficulty":"hard"}
+{"task":"Desain evaluator 'consistency across steps' untuk reasoning multi-langkah.","category":"evaluation","difficulty":"hard"}
+{"task":"Rancang baseline non-LLM (regex/rule) untuk bandingkan beberapa task.","category":"research","difficulty":"hard"}
+{"task":"Strategi merging memory harian (dedup semantik, decay, pin high-reward).","category":"memory","difficulty":"hard"}
+{"task":"Skema eksperimen 'plan-and-execute vs plan-critic-execute'.","category":"experiment","difficulty":"hard"}
+{"task":"Desain ringkasan eksekutif per tugas (what, why, risk, next).","category":"documentation","difficulty":"hard"}
+{"task":"Mekanisme quarantine untuk output berisiko tinggi (manual review).","category":"safety","difficulty":"hard"}
+{"task":"Rancang integrasi voice (ElevenLabs) dengan cache & rate-limit.","category":"systems","difficulty":"hard"}
+{"task":"Protokol kolaborasi multi-agent: peran, konsensus, tie-breaker.","category":"multiagent","difficulty":"hard"}
+{"task":"Desain alat tracing langkah (span) untuk reasoning chain.","category":"obs","difficulty":"hard"}
+{"task":"Strategi sampling hard-cases 30–50% per batch tanpa overfit.","category":"learning","difficulty":"hard"}
+{"task":"Rancang 'risk-aware planner' dengan penalty pada operasi berbahaya.","category":"planning","difficulty":"hard"}
+{"task":"Eksperimen 'ensemble ringan' 2 provider + evaluator heuristik.","category":"research","difficulty":"hard"}
+{"task":"Skema anotasi kesalahan umum (kategori, contoh, perbaikan).","category":"evaluation","difficulty":"hard"}
+{"task":"Desain uji robustnes terhadap input noise & adversarial prompt.","category":"security","difficulty":"hard"}
+{"task":"Protokol publikasi metrik mingguan (format, repositori, bukti).","category":"ops","difficulty":"hard"}
+{"task":"Rencana eskalasi dari CPU-only → burst GPU hemat biaya.","category":"systems","difficulty":"hard"}

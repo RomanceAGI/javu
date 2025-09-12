@@ -1,0 +1,49 @@
+{"task":"Sebutkan 3 manfaat tidur yang konsisten.","category":"reasoning","difficulty":"easy"}
+{"task":"Jelaskan Docker dalam 2 kalimat sederhana.","category":"research","difficulty":"easy"}
+{"task":"Checklist harian produktivitas 5 poin.","category":"planning","difficulty":"easy"}
+{"task":"Ringkas paragraf jadi 3 bullet.","category":"summarization","difficulty":"easy"}
+{"task":"Bedakan RAM vs storage singkat.","category":"research","difficulty":"easy"}
+{"task":"3 nama variabel Python yang valid.","category":"code","difficulty":"easy"}
+{"task":"Regex sederhana untuk email.","category":"code","difficulty":"easy"}
+{"task":"5 ide tweet edukatif tentang AI.","category":"creative","difficulty":"easy"}
+{"task":"Analogi git commit vs git push.","category":"research","difficulty":"easy"}
+{"task":"3 aturan aman eksekusi kode dari internet.","category":"safety","difficulty":"easy"}
+{"task":"Apa itu API + contoh sehari-hari.","category":"research","difficulty":"easy"}
+{"task":"5 aturan prompt hygiene dasar.","category":"prompting","difficulty":"easy"}
+{"task":"4 langkah debugging Python.","category":"code","difficulty":"easy"}
+{"task":"TL;DR satu kalimat dari paragraf pendek.","category":"summarization","difficulty":"easy"}
+{"task":"5 langkah mengamankan password.","category":"safety","difficulty":"easy"}
+{"task":"Bedakan HTTP vs HTTPS.","category":"research","difficulty":"easy"}
+{"task":"TODO setup proyek Python baru.","category":"planning","difficulty":"easy"}
+{"task":"Contoh JSON valid: nama+umur.","category":"data","difficulty":"easy"}
+{"task":"3 metrik klasifikasi umum.","category":"ml","difficulty":"easy"}
+{"task":"Bedakan CPU vs GPU singkat.","category":"research","difficulty":"easy"}
+{"task":"3 ide eksperimen AI sederhana untuk pemula.","category":"creative","difficulty":"easy"}
+{"task":"3 perbedaan Python list vs tuple.","category":"code","difficulty":"easy"}
+{"task":"Apa itu latency dalam sistem komputer?","category":"systems","difficulty":"easy"}
+{"task":"Jelaskan 'version control' dalam 2 kalimat.","category":"research","difficulty":"easy"}
+{"task":"5 tips menulis commit message yang baik.","category":"devops","difficulty":"easy"}
+{"task":"Bedakan supervised vs unsupervised learning.","category":"ml","difficulty":"easy"}
+{"task":"Contoh REST API endpoint sederhana.","category":"code","difficulty":"easy"}
+{"task":"Definisi prompt injection singkat.","category":"security","difficulty":"easy"}
+{"task":"3 keuntungan containerization.","category":"devops","difficulty":"easy"}
+{"task":"Apa itu JSONL dan kapan dipakai?","category":"data","difficulty":"easy"}
+{"task":"Format timestamp ISO8601.","category":"data","difficulty":"easy"}
+{"task":"Definisi unit test singkat.","category":"testing","difficulty":"easy"}
+{"task":"5 langkah membuat akun GitHub.","category":"planning","difficulty":"easy"}
+{"task":"Contoh query SQL SELECT sederhana.","category":"code","difficulty":"easy"}
+{"task":"3 manfaat caching dalam aplikasi web.","category":"systems","difficulty":"easy"}
+{"task":"Apa itu API key?","category":"security","difficulty":"easy"}
+{"task":"Bedakan frontend vs backend singkat.","category":"web","difficulty":"easy"}
+{"task":"3 manfaat CI/CD.","category":"devops","difficulty":"easy"}
+{"task":"Contoh struktur folder Python sederhana.","category":"project","difficulty":"easy"}
+{"task":"Apa itu load balancer?","category":"systems","difficulty":"easy"}
+{"task":"3 manfaat dokumentasi teknis.","category":"documentation","difficulty":"easy"}
+{"task":"Bedakan RAM DDR4 vs DDR5 singkat.","category":"hardware","difficulty":"easy"}
+{"task":"5 tips optimasi query database.","category":"db","difficulty":"easy"}
+{"task":"Apa itu prompt chaining?","category":"prompting","difficulty":"easy"}
+{"task":"Contoh pengunaan try-except di Python.","category":"code","difficulty":"easy"}
+{"task":"Definisi 'throughput' singkat.","category":"systems","difficulty":"easy"}
+{"task":"3 kelebihan microservices.","category":"systems","difficulty":"easy"}
+{"task":"Apa itu hashing dan contohnya.","category":"security","difficulty":"easy"}
+{"task":"5 tips debugging web app.","category":"web","difficulty":"easy"}
