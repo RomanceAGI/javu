@@ -5,7 +5,7 @@ Returns a dict like {"text": str, "ok": bool, "meta": {...}}
 """
 from __future__ import annotations
 from typing import Dict, Any
-from javu_agi.utils.logger import get_logger, redact
+from javu_agi.utils.logging_config import get_logger, redact
 
 logger = get_logger("javu_agi.llm_wrapper")
 

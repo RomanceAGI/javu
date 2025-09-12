@@ -1,7 +1,7 @@
 from __future__ import annotations
 import os, json, time
 
-from javu_agi.utils.logger import get_logger, redact
+from javu_agi.utils.logging_config import get_logger, redact
 from javu_agi.utils.atomic_write import append_jsonl_atomic
 
 logger = get_logger("javu_agi.telemetry")

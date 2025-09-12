@@ -2,7 +2,7 @@ from __future__ import annotations
 import os, json, time
 from typing import Dict, Any
 
-from javu_agi.utils.logger import logger
+from javu_agi.utils.logging_config import logger
 
 GENERATED_DIR = os.getenv("SKILL_CACHE_DIR", "/data/skills")
 

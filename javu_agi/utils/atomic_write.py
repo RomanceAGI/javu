@@ -7,7 +7,7 @@ from __future__ import annotations
 import os
 import tempfile
 from typing import Any
-from javu_agi.utils.logger import get_logger
+from javu_agi.utils.logging_config import get_logger
 
 logger = get_logger("javu_agi.atomic_write")
 

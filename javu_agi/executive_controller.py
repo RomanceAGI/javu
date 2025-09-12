@@ -5,6 +5,8 @@ from readline import insert_text
 from typing import Any, Dict, List, Optional, Tuple, Callable
 import os, time, threading, json, hashlib, math, re, pathlib
 
+from click import prompt
+
 # absolute imports 
 from javu_agi.eval.report_server import Payload
 from javu_agi.world_model import WorldModel
@@ -20,6 +22,9 @@ from javu_agi.learn.policy_learner_ctx import ContextualPolicyLearner
 from javu_agi.safety_values import violates_core_values, explain_violation
 from javu_agi.safety.kill_switch import KillSwitch
 from javu_agi.safety.policy_engine import PolicyEngine
+from javu_agi.safety.ec_integration import preflight_action, enforce_approval_blocking
+from javu_agi.safety.action_audit import record_action
+from javu_agi.safety.circuit_breaker import CB
 from javu_agi.self_reflection import reflect_outcome
 from javu_agi.self_model import SelfModel
 from javu_agi.social_cognition import SocialCognition
@@ -32,7 +37,7 @@ from javu_agi.learn.lifelong import LifelongLearner
 from javu_agi.memory.memory_manager import MemoryManager
 from javu_agi.obs.metrics import M
 from javu_agi.tools.registry import ToolRegistry
-from javu_agi.tools.planner import Planner
+from javu_agi.tools.planner import Plan, Planner
 from javu_agi.tools.planner_llm import LLMPlanner
 from javu_agi.tools.policy_filter import PolicyFilter
 from javu_agi.tools.policy_filter_hard import PolicyFilterHard
@@ -495,6 +500,11 @@ class UserLimitManager:
             return False, cat
         return True, ""
 
+def run_crosscheck(tool, args):
+    raise NotImplementedError
+
+def _evidence_gate(prompt, draft):
+    raise NotImplementedError
 
 class ExecutiveController:
     _daemon_started: bool = False
@@ -506,6 +516,16 @@ class ExecutiveController:
 
         # EARLY CORE
         self.tracer = DecisionTracer(base=os.getenv("AUDIT_DIR","/artifacts/audit"))
+        # run lightweight startup checks (best-effort)
+        try:
+            from javu_agi.startup_checks import run_all as run_startup_checks
+            start_ok = run_startup_checks()
+            try:
+                self.tracer.log("startup_checks", start_ok)
+            except Exception:
+                pass
+        except Exception:
+            pass
         self.memory = getattr(self, "memory", None) or MemoryManager()
         self.values = getattr(self, "values", None) or ValueMemory()
         self.world  = getattr(self, "world",  None) or WorldModel(memory=self.memory)
@@ -1141,7 +1161,7 @@ class ExecutiveController:
                                              self.executor)
                     if ok: out.append(st)
                 except Exception:
-                    continue
+                    pass
             if out:
                 try:
                     self.graph.add_recipe(f"repair::{hashlib.sha1(prompt.encode()).hexdigest()}", out)
@@ -1298,7 +1318,8 @@ class ExecutiveController:
         # === legacy causal reasoning adapter ===
         try:
             if getattr(self, "causal_legacy", None):
-                steps = self.causal_legacy.annotate(user_id, prompt, steps)
+                user_id_val = locals().get("user_id", "auto")
+                steps = self.causal_legacy.annotate(user_id_val, prompt, steps)
                 steps = self.causal_legacy.rerank(steps)
         except Exception:
             pass
@@ -1823,6 +1844,12 @@ class ExecutiveController:
         except Exception:
             pass
 
+        # Autonomy/Goal feeder
+        try:
+            self._ensure_autonomy_feeder()
+        except Exception:
+            pass
+
         # === Rate/Quota enforcement ===
         ok, why = self.limit_mgr.allow_request(user_id)
         if not ok:
@@ -1869,10 +1896,10 @@ class ExecutiveController:
             pass
         
         if self.deliberator:
-            verdict = self.deliberator.consensus(plan)
+            verdict = self.deliberator.consensus(Plan)
             self.tracer.log("deliberation", verdict)
             if verdict.get("consensus", 0) < 0.5:
-                plan.insert(0, {"cmd": "verify", "args": "low consensus, do extra check"})
+                Plan.insert(0, {"cmd": "verify", "args": "low consensus, do extra check"})
 
         # --- Counterfactual compare LLM vs MCTS ---
         try:
@@ -2639,6 +2666,42 @@ class ExecutiveController:
             s = steps[i]
             tool = (s.get("tool","?") or "").lower()
             cmd  = (s.get("cmd","") or "")
+            # --- PRE-FLIGHT CHECK (policy + optional human approval) ---
+            try:
+                action = {"cmd": cmd, "tool": tool, "context": {"intent_id": intent_id, "episode_id": episode_id}}
+                pf = preflight_action(user_id or "anon", action)
+                if not pf.get("allow", False):
+                    # block immediately
+                    if pf.get("mode") == "block":
+                        out_lines.append(f"[BLOCK] policy deny for: {cmd[:160]}")
+                        miss += 1; self._miss_ctr = miss
+                        # already audited inside helper
+                        if miss >= 3:
+                            break
+                        continue
+                    # pending -> enqueue/short-wait sync (configurable)
+                    if pf.get("mode") == "pending":
+                        rid = pf.get("approval_rid")
+                        # synchronous short wait for admin/testing; in prod prefer non-blocking
+                        apro = enforce_approval_blocking(rid, timeout_s=int(os.getenv("APPROVAL_WAIT_S", "5")))
+                        if not apro.get("approved", False):
+                            out_lines.append(f"[PENDING] approval required for: {cmd[:120]}")
+                            miss += 1; self._miss_ctr = miss
+                            if miss >= 3:
+                                break
+                            continue
+                       # approved -> fall through to execute
+            except Exception:
+                # fail-safe: if preflight errors, be conservative: block this step
+                try:
+                    self.tracer.log("preflight_err", {"tool": tool, "cmd": cmd})
+                except Exception:
+                    pass
+                out_lines.append("[BLOCK] preflight evaluation error")
+                miss += 1; self._miss_ctr = miss
+                if miss >= 3:
+                  break
+                continue
             # DP GUARD
             dp_cost = 0.05 if ("search" in tool or "db" in tool) else 0.01
             if not self.dp_budget.allow(dp_cost):
@@ -2893,6 +2956,32 @@ class ExecutiveController:
                 stdout = strip_ansi(scrub(stdout))
 
             if code == 0:
+                # --- POST-EXEC AUDIT (record outcome) ---
+                try:
+                    res_meta = {"rc": int(code), "stdout": (stdout or "")[:2000], "stderr": (stderr or "")[:2000]}
+                    try:
+                        record_action(user_id or "anon", {"cmd": cmd, "tool": tool}, {"outcome": res_meta})
+                    except Exception:
+                        self.tracer.log("postexec_audit_err", {"tool": tool, "cmd": cmd})
+                except Exception:
+                    try:
+                        self.tracer.log("postexec_record_err", {"tool": tool, "cmd": cmd})
+                    except Exception:
+                        pass
+
+                # Circuit-breaker on repeated failures
+                try:
+                    if int(code) != 0:
+                        CB.record_failure()
+                        if CB.should_trip():
+                            out_lines.append("[TRIP] Circuit breaker tripped — halting autonomous execution.")
+                            # surface immediate stop
+                            break
+                except Exception:
+                    try:
+                         self.tracer.log("cb_handling_err", {"tool": tool, "cmd": cmd})
+                    except Exception:
+                        pass
                 # --- PII gate ---
                 if is_leak(stdout):
                     out_lines.append("[BLOCK] output contains PII (suppressed)")
@@ -3378,7 +3467,7 @@ class ExecutiveController:
         ep = begin_episode(user_id, prompt)
         meta = {"episode_ts": int(t0)}
         self.wm.put("episode_id", ep, priority=1.0, ttl=10)
-        prompt = self._extract_prompt(mode, payload)
+        prompt = self._extract_prompt(mode, Payload)
         
         try:
             self.consent.record(ep, user_id, "prompt_in", {"text": prompt[:500]})

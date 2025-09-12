@@ -4,7 +4,7 @@ from pathlib import Path
 from typing import Dict, List, Callable
 from javu_agi.rag.ingest import ingest_texts
 from javu_agi.rag.parsers import read_text_file, read_md_file, read_log_file
-from javu_agi.utils.logger import get_logger
+from javu_agi.utils.logging_config import get_logger
 from javu_agi.utils.atomic_write import write_json_atomic
 
 logger = get_logger("javu_agi.corpus_watcher")

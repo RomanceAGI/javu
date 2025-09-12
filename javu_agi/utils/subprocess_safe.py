@@ -5,7 +5,7 @@ Use run_cmd([...]) instead of subprocess.run(...) directly.
 from __future__ import annotations
 import subprocess
 from typing import List, Optional, Dict, Any
-from javu_agi.utils.logger import get_logger
+from javu_agi.utils.logging_config import get_logger
 
 logger = get_logger("javu_agi.subprocess_safe")
 
