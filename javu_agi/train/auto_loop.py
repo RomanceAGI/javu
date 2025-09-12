@@ -11,6 +11,7 @@ from javu_agi.eval.eval_harness import (
     run_transfer_set,
     run_adversarial_set,
 )  # asumsi ada runner ini
+from javu_agi.utils.subprocess_safe import run_cmd
 
 DATA_DIR = Path("./data")
 LOGS = Path("./logs")
@@ -18,6 +19,17 @@ LOGS.mkdir(parents=True, exist_ok=True)
 
 GATES = {"arena_target": 0.60, "transfer_target": 0.80, "adversarial_target": 0.90}
 
+# earlier code remains
+batch = build_training_batch(total=500)
+Path("tmp_batch.jsonl").write_text(
+        "\n".join(json.dumps(x, ensure_ascii=False) for x in batch), encoding="utf-8"
+    )
+    # 1) jalankan arena via script eksternal (sinkron)
+    # asumsi ./scripts/run_arena.sh menghasilkan logs/arena_report.json
+result = run_cmd(["./scripts/run_arena.sh", "500"], timeout=300)
+if not result.get("ok"):
+        # log already handled by helper; continue with fallback
+        pass
 
 def collect_failures(arena_report_path: Path) -> List[Dict[str, Any]]:
     fails = []

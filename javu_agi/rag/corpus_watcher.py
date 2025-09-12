@@ -4,6 +4,10 @@ from pathlib import Path
 from typing import Dict, List, Callable
 from javu_agi.rag.ingest import ingest_texts
 from javu_agi.rag.parsers import read_text_file, read_md_file, read_log_file
+from javu_agi.utils.logger import get_logger
+from javu_agi.utils.atomic_write import write_json_atomic
+
+logger = get_logger("javu_agi.corpus_watcher")
 
 READERS: Dict[str, Callable[[Path], str]] = {
     ".txt": read_text_file,
@@ -89,13 +93,17 @@ class CorpusWatcher:
             self._save_state()
         return {"added": added, "updated": updated}
 
-    def run_forever(self):
-        while True:
-            try:
+    def run_forever(self, stop_event=None):
+        try:
+            while True:
                 self.tick()
-            except Exception:
-                pass
-            time.sleep(self.interval_s)
+                if stop_event is not None and getattr(stop_event, "is_set", lambda: False)():
+                    break
+                time.sleep(self.interval_s)
+        except KeyboardInterrupt:
+            logger.info("corpus_watcher stopped by KeyboardInterrupt")
+        except Exception:
+            logger.exception("corpus_watcher run_forever terminated unexpectedly")
 
 
 if __name__ == "__main__":
