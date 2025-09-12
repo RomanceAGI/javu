@@ -2,6 +2,8 @@ from __future__ import annotations
 import os, json, time
 from typing import Dict, Any
 
+from javu_agi.utils.logger import logger
+
 GENERATED_DIR = os.getenv("SKILL_CACHE_DIR", "/data/skills")
 
 
@@ -77,3 +79,53 @@ def register_skill(skill: Dict[str, Any]) -> str:
     with open(path, "w", encoding="utf-8") as f:
         json.dump(skill, f, ensure_ascii=False, indent=2)
     return path
+
+def verify_and_run_skill(skill: dict, exec_ctrl) -> bool:
+    """
+    Minimal safe wrapper: ensure steps exist and guard remote execution errors.
+    """
+    try:
+        steps = skill.get("steps", [])
+        if not isinstance(steps, list) or len(steps) == 0:
+            logger.warning("Skill has no steps or invalid steps: %s", skill.get("id", "<no-id>"))
+            return False
+        worker = os.getenv("TOOL_WORKER_URL")
+        if not worker:
+            # local dry-run verification
+            for st in steps:
+                try:
+                    ok, _ = exec_ctrl.verify_step(
+                        exec_ctrl.tools,
+                        "sandbox://dry",
+                        {"tool": st.get("tool"), "cmd": st.get("cmd"), "strict": True},
+                        exec_ctrl.executor,
+                    )
+                except Exception:
+                    logger.exception("verify_step failed in dry-run for skill %s", skill.get("id"))
+                    ok = False
+                if not ok:
+                    return False
+            return True
+        # with worker: execute first step safely
+        s0 = steps[0]
+        try:
+            ok, _ = exec_ctrl.verify_step(
+                exec_ctrl.tools,
+                worker,
+                {"tool": s0.get("tool"), "cmd": s0.get("cmd"), "strict": True},
+                exec_ctrl.executor,
+            )
+        except Exception:
+            logger.exception("verify_step failed against worker for skill %s", skill.get("id"))
+            return False
+        if not ok:
+            return False
+        try:
+            res = exec_ctrl.tools.run_remote(s0.get("cmd"), worker)
+            return int(res.get("code", -1)) == 0
+        except Exception:
+            logger.exception("run_remote failed for skill %s", skill.get("id"))
+            return False
+    except Exception:
+        logger.exception("Unexpected error in verify_and_run_skill")
+        return False
