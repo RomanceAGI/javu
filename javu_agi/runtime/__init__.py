@@ -49,10 +49,12 @@ public_symbols = {
 }
 
 for mod, symbols in public_symbols.items():
-    if mod in globals():
+    module_obj = globals().get(mod)
+    if module_obj:
         for sym in symbols:
             try:
-                globals()[sym] = getattr(globals()[mod], sym)  # type: ignore
-                __all__.append(sym)
-            except AttributeError:
-                pass
+                globals()[sym] = getattr(module_obj, sym)
+                if sym not in __all__:
+                    __all__.append(sym)
+            except Exception:
+                logger.debug("public symbol %s not found in module %s", sym, mod)

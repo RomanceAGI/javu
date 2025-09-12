@@ -21,8 +21,17 @@ class SelfRepairManager:
     def on_exception(
         self, err: Exception, trace_id: str, context: Dict[str, Any] | None = None
     ) -> Dict[str, Any]:
+        import logging
+        logger = logging.getLogger("javu_agi.self_repair")
         ctx = context or {}
-        tb = traceback.format_exc()
+        try:
+            if err is not None and getattr(err, "__traceback__", None) is not None:
+                tb = "".join(traceback.format_exception(type(err), err, err.__traceback__))
+            else:
+                tb = traceback.format_exc()
+        except Exception as e:
+            tb = traceback.format_exc()
+
         rid = f"{self._ts()}_{uuid.uuid4().hex[:8]}"
         incident = {
             "rid": rid,
@@ -103,8 +112,26 @@ class SelfRepairManager:
             return False
         # prefer 'git apply' kalau repo git
         if os.path.isdir(os.path.join(self.root, ".git")):
-            r = subprocess.run(["git", "apply", patch_path], cwd=self.root, timeout=20)
-            return r.returncode == 0
+            try:
+                r = subprocess.run(
+                    ["git", "apply", "--verbose", patch_path],
+                    cwd=self.root,
+                    capture_output=True,
+                    text=True,
+                    check=True,
+                )
+                if r.returncode != 0:
+                    import logging
+                    logger = logging.getLogger("javu_agi.self_repair")
+                    logger.warning("git apply failed (code=%s): %s", r.returncode, (r.stderr or r.stdout).strip())
+                    return False
+                return True
+            except subprocess.SubprocessError as e:
+                import logging
+                logger = logging.getLogger("javu_agi.self_repair")
+                logger.exception("git apply subprocess error: %s", e)
+                return False
+
         # fallback naive (hanya komentar: implementasi real sebaiknya pakai git)
         return False
 

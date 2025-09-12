@@ -13,7 +13,7 @@ from typing import Callable, Dict, List, Any, Optional
 
 from javu_agi.llm import call_llm
 from javu_agi.utils.logger import log_user
-from javu_agi.tools.tool_contracts import default_contracts, enforce_contract
+from javu_agi.tools.tool_contracts import default_contracts, enforce_contracts
 
 # Policy, Limits, Audit, RateLimit
 _DEFAULT_TIMEOUT_S = int(os.getenv("TOOL_TIMEOUT_S", "30"))
@@ -252,11 +252,16 @@ def _tool_search(_text: str, **_):
             "timeout_s": timeout_s,
         }
     )
-    # Signature asli kamu: learn_from_web(user_id) — kita panggil mode policy-enforced via env
-    learn_from_web("system")
-    return "Belajar dari web selesai (policy-enforced)."
-
-
+    # Panggilan eksternal dibungkus agar kegagalan tidak mematikan executor
+    try:
+        learn_from_web("system")
+        return "Web Learning selesai."
+    except Exception as e:
+        import logging
+        logger = logging.getLogger("javu_agi.tool_executor")
+        logger.exception("learn_from_web failed: %s", e)
+        return f"[TOOL ERROR] learn_from_web failed: {e}"
+    
 def _tool_image(text: str, **_):
     from javu_agi.tool_image_gen import generate_image_file
 
