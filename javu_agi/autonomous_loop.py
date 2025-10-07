@@ -19,7 +19,7 @@ from javu_agi.critic_verifier import approve, critique
 from javu_agi.tool_rl_bandit import EpsilonGreedyBandit
 
 try:
-    from trace_logger import log_trace
+    from trace.trace_logger import log_trace
 except Exception:
 
     def log_trace(uid, t, c):

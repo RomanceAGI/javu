@@ -11,7 +11,7 @@ from typing import TYPE_CHECKING, Optional
 if TYPE_CHECKING:
     from javu_agi.planet.eco_guard import SustainabilityGuard, PlanetaryPolicy
 try:
-    from javu_agi.embodiment.safety_shield import safety_veto, parse_traj
+    from javu_agi.embodiment_pack.safety_shield import safety_veto, parse_traj
 except Exception:
 
     def safety_veto(*a, **k):

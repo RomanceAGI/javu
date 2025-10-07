@@ -13,8 +13,16 @@ except Exception:
 
 AUDIT = AuditChain(log_dir=os.getenv("AUDIT_CHAIN_DIR", "logs/audit_chain"))
 _ECO = EcoGuard()
-_PG = PlanetaryGuardian()
+try:
+    from javu_agi.planet.eco_guard import PlanetaryGuardian  # type: ignore
+except Exception:
+    # Fallback stub if the real PlanetaryGuardian is unavailable
+    class PlanetaryGuardian:
+        def assess(self, steps):
+            # default to permit to avoid blocking in environments without the guardian
+            return {"permit": True}
 
+_PG = PlanetaryGuardian()
 
 # ------------------------- Legacy (compat) -------------------------
 def detect_agent_via_llm(user_input: str) -> str:

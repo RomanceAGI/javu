@@ -1,5 +1,6 @@
 from __future__ import annotations
 from dataclasses import dataclass
+import re
 from typing import Dict, Any, Optional, List
 import time, random
 
@@ -105,7 +106,6 @@ class DriveSystem:
             self.memory.consolidate()
         except Exception:
             pass
-        return r, comps
 
         try:
             self.state.social_impact = 0.6 * self.state.social_impact + 0.4 * float(

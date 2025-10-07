@@ -15,7 +15,7 @@ REHEARSE_TAG = "[REHEARSAL]"
 
 def _audit(kind: str, rec: Dict[str, Any]):
     try:
-        from javu_agi.audit_chain import AuditChain
+        from javu_agi.audit.audit_chain import AuditChain
 
         AuditChain(log_dir=os.getenv("AUDIT_CHAIN_DIR", "logs/audit_chain")).commit(
             kind=kind, record=rec

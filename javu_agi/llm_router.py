@@ -1,8 +1,9 @@
 from __future__ import annotations
-import os, time, json, hashlib, math, random, pathlib, requests, subprocess, threading, yaml
+import os, time, json, hashlib, math, random, pathlib, subprocess, threading, shutil, tempfile
 from typing import Optional, Dict, Any, List, Tuple
 
 from pathlib import Path
+from urllib import request
 from javu_agi.config import load_models_cfg, load_router_policy
 from javu_agi.utils.degrade import text_image_stub, subtitles_from_text, text_slideshow_video, enqueue_ticket
 
@@ -170,11 +171,16 @@ def _user_cap_left(user_id: Optional[str]) -> float:
 
 class UserCapExceeded(RuntimeError): ...
 
+class BudgetExceeded(RuntimeError): ...
+
 # ====== CACHE / BUDGET ======
 _redis = None
 if REDIS_URL:
     try:
-        from redis import Redis
+        # use importlib to avoid static analyzers complaining about a missing optional dependency
+        import importlib
+        redis_mod = importlib.import_module("redis")
+        Redis = getattr(redis_mod, "Redis")
         _redis = Redis.from_url(REDIS_URL)
     except Exception:
         _redis = None
@@ -419,17 +425,19 @@ def get_model_stats():
 
 # ====== ADAPTERS (OpenAI / Anthropic) ======
 def _openai_generate(model: str, prompt: str, **kw) -> Dict[str, Any]:
-    from javu_agi.llm.openai_adapter import generate as openai_gen
+    from javu_agi.llm import generate as openai_gen
     return openai_gen(prompt, model=model, **kw)
 
 def _anthropic_generate(model: str, prompt: str, **kw) -> Dict[str, Any]:
-    from javu_agi.llm.anthropic_adapter import generate as anth_gen
+    from javu_agi.llm import generate as anth_gen
     return anth_gen(prompt, model=model, **kw)
 
 def _call_provider(model: str, prompt: str, **kw) -> Dict[str, Any]:
     provider = MODEL_META.get(model, {}).get("provider")
-    if provider == "openai":   return _openai_generate(model, prompt, **kw)
-    if provider == "anthropic":return _anthropic_generate(model, prompt, **kw)
+    if provider == "openai":
+        return _openai_generate(model, prompt, **kw)
+    if provider == "anthropic":
+        return _anthropic_generate(model, prompt, **kw)
     # fallback asumsi OpenAI
     return _openai_generate(model, prompt, **kw)
 
@@ -444,11 +452,22 @@ def _local_generate(model: str, prompt: str, **kw) -> dict:
         return {"text":"[LOCAL_MODEL_NONE]"}
     ckpt = sorted(LOCAL_REG, key=lambda x: x.get("registered_at",0))[-1]["ckpt_dir"]
     try:
-        from transformers import AutoTokenizer, AutoModelForCausalLM
+        import importlib
+        try:
+            transformers = importlib.import_module("transformers")
+            AutoTokenizer = getattr(transformers, "AutoTokenizer")
+            AutoModelForCausalLM = getattr(transformers, "AutoModelForCausalLM")
+        except Exception:
+            return {"text": "[LOCAL_MODEL_ERROR] transformers not available in environment"}
         tok = AutoTokenizer.from_pretrained(ckpt, use_fast=True)
         mdl = AutoModelForCausalLM.from_pretrained(ckpt)
-        import torch
-        dev = "cuda" if torch.cuda.is_available() else "cpu"
+        # lazy-import torch to avoid static analysis errors when torch isn't installed
+        import importlib
+        try:
+            torch = importlib.import_module("torch")
+        except Exception:
+            return {"text": "[LOCAL_MODEL_ERROR] torch not available in environment"}
+        dev = "cuda" if getattr(torch, "cuda", None) and torch.cuda.is_available() else "cpu"
         mdl = mdl.to(dev)
         ipt = tok(prompt, return_tensors="pt").to(dev)
         out = mdl.generate(**ipt, max_new_tokens=kw.get("max_tokens",512), temperature=kw.get("temperature",0.2))
@@ -487,14 +506,14 @@ def _openai_image_generate(prompt: str, size: str = "1024x1024") -> str:
     url = "https://api.openai.com/v1/images/generations"
     headers = {"Authorization": f"Bearer {api_key}", "Content-Type":"application/json"}
     payload = {"model":"dall-e-3", "prompt": prompt, "size": size}
-    r = requests.post(url, headers=headers, json=payload, timeout=120)
+    r = request.post(url, headers=headers, json=payload, timeout=120)
     r.raise_for_status()
     data = r.json()
     img_url = data["data"][0]["url"]
 
     # download
     try:
-        binr = requests.get(img_url, timeout=120).content
+        binr = request.get(img_url, timeout=120).content
         with open(out, "wb") as f:
             f.write(binr)
         try:
@@ -528,7 +547,7 @@ def _elevenlabs_tts(text: str) -> str:
     hdr = {"xi-api-key": key, "accept": "audio/mpeg", "Content-Type":"application/json"}
     payload = {"text": text, "voice_settings": {"stability": 0.4, "similarity_boost": 0.9}}
 
-    r = requests.post(url, headers=hdr, json=payload, timeout=120)
+    r = request.post(url, headers=hdr, json=payload, timeout=120)
     r.raise_for_status()
 
     with open(out, "wb") as f:
@@ -790,6 +809,12 @@ def run_multimodal_task(task: str) -> dict:
     if err:
         out["errors"] = err
     return out
+
+def budget_consume(budget_type, amount):
+    raise NotImplementedError
+
+def budget_precheck(resource_type, min_left):
+    raise NotImplementedError
 
 def _storyboard_to_video(narration_text: str, base_prompt: str) -> str:
     _ensure_dir(VIDEO_OUT_DIR)

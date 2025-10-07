@@ -1,3 +1,4 @@
+import os
 from javu_agi.user_state import get_state, update_state
 from javu_agi.memory.memory import save_to_memory
 from javu_agi.utils.logger import log_user

@@ -2,7 +2,7 @@ from __future__ import annotations
 from typing import List, Dict, Any
 
 try:
-    from casual_reasoning import reason_about_cause as _legacy_cause
+    from javu_agi.causal_reasoning import reason_about_cause as _legacy_cause
 except Exception:
     _legacy_cause = None
 
